@@ -2,7 +2,7 @@
 using System.Collections;
 using System;
 
-[RequireComponent(typeof(MovementComponent))]
+[RequireComponent( typeof( MovementComponent ) )]
 public class PlayerControl : MonoBehaviour
 {
     MovementComponent movement;
