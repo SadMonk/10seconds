@@ -7,7 +7,7 @@ public class Buff_Strength : MonoBehaviour, Buff {
 	public float duration = 10f;
 	private float activationTime;
 	private Player player;
-	public int buffType = BuffTypes.Strength;
+	public int buffType = (int)BuffTypes.Strength;
 	
 	/// <summary>
 	/// Enables the buff for the player.
@@ -34,7 +34,7 @@ public class Buff_Strength : MonoBehaviour, Buff {
 	/// <summary>
 	/// Checks if the buff is over and disables it.
 	/// </summary>
-	private void checkEnd()
+	public void checkEnd()
 	{
 		if(Time.time > this.activationTime + duration) {
 			this.disable();
@@ -42,12 +42,12 @@ public class Buff_Strength : MonoBehaviour, Buff {
 	}
 	
 	/// <summary>
-	/// Gets the type.
+	/// Gets the Buff type.
 	/// </summary>
 	/// <returns>
 	/// The type.
 	/// </returns>
-	public string getType() {
+	public int getType() {
 		return buffType;
 	}
 		
