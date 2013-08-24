@@ -15,13 +15,14 @@ public class MovementComponent : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate ()
     {
-        rigidbody.velocity = Velocity * MovementSpeed;
+        //rigidbody.velocity = Velocity * MovementSpeed;
+        //rigidbody.AddForce( Velocity );
         transform.position = new Vector3( transform.position.x, transform.position.y, transform.position.y * ZLevelMultiplyer );
 	}
 
-    public void Move( float x, float y )
-    {
-        Velocity = new Vector3( x, y, 0 );
-        Velocity.Normalize();
-    }
+//     public void Move( float x, float y )
+//     {
+//         Velocity = new Vector3( x, y, 0 );
+//         Velocity.Normalize();
+//     }
 }

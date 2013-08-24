@@ -31,6 +31,8 @@ public class GameUnit : MonoBehaviour
     public int hitPoints = 100;
 
     public int combinedStrength { get { return baseStrength + strength; } }
+    public float combinedAttackSpeed { get { return (float)( baseAttackSpeed + attackSpeed ) * 0.25f; } }
+    public float combinedWalkSpeed { get { return (float)( baseWalkSpeed + walkSpeed ); } }
 
     Queue<Buff> buffs = new Queue<Buff>();
 	

@@ -2,12 +2,12 @@
 using System.Collections;
 
 public class Enemy : MonoBehaviour {
-	
-	public int hitpoints = 3;
+
+    public GameUnit gameUnit;
 
 	// Use this for initialization
-	void Start () {
-		
+	void Awake () {
+        gameUnit = GetComponent<GameUnit>();
 	}
 	
 	// Update is called once per frame

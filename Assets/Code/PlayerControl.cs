@@ -8,13 +8,15 @@ public class PlayerControl : MonoBehaviour
     MovementComponent movement;
     SpriteComponent sprite;
     Player player;
+    GameUnit gameUnit;
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
         movement = GetComponent<MovementComponent>();
         sprite = GetComponent<SpriteComponent>();
         player = GetComponent<Player>();
+        gameUnit = GetComponent<GameUnit>();
     }
 
     void FixedUpdate()
@@ -27,7 +29,10 @@ public class PlayerControl : MonoBehaviour
         if( Input.GetAxis( "Vertical" ) < 0 ) y -= 1f;
         if( Input.GetAxis( "Vertical" ) > 0 ) y += 1f;
 
-        movement.Move( x, y );
+        //movement.Move( x, y );
+        Vector3 force = Vector3.Normalize( new Vector3( x, y, 0f ) );
+        force *= gameUnit.combinedWalkSpeed;
+        rigidbody.AddForce( force );
 
         if( x > 0 )
         {
