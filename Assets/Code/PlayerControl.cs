@@ -1,43 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
-[RequireComponent( typeof( PlayerStats ) )]
+[RequireComponent(typeof(MovementComponent))]
 public class PlayerControl : MonoBehaviour
 {
-    PlayerStats stats;
+    MovementComponent movement;
 
     // Use this for initialization
     void Start()
     {
-        stats = GetComponent<PlayerStats>();
+        movement = GetComponent<MovementComponent>();
     }
 
     void FixedUpdate()
     {
-        float velX = 0;
-        float velY = 0;
-
-        if( Input.GetKey( KeyCode.LeftArrow ) )
-        {
-            velX -= stats.MovementSpeed;
-        }
-
-        if( Input.GetKey( KeyCode.RightArrow ) )
-        {
-            velX += stats.MovementSpeed;
-        }
-
-        if( Input.GetKey( KeyCode.UpArrow ) )
-        {
-            velY += stats.MovementSpeed;
-        }
-
-        if( Input.GetKey( KeyCode.DownArrow ) )
-        {
-            velY -= stats.MovementSpeed;
-        }
-
-        rigidbody.velocity = new Vector3( velX, velY, 0f );
-
+        movement.Move(
+            -Convert.ToSingle( Input.GetKey( KeyCode.LeftArrow ) ) + Convert.ToSingle( Input.GetKey( KeyCode.RightArrow ) ),
+            -Convert.ToSingle( Input.GetKey( KeyCode.DownArrow ) ) + Convert.ToSingle( Input.GetKey( KeyCode.UpArrow ) ) );
     }
 }
