@@ -58,7 +58,10 @@ public class Player : MonoBehaviour
                     Enemy enemy = go.GetComponent<Enemy>();
                     if( enemy != null )
                     {
-                        enemy.GetComponent<GameUnit>().ReceiveDamage( gameUnit.combinedStrength );
+                        int dmg = gameUnit.combinedStrength;
+                        enemy.GetComponent<GameUnit>().ReceiveDamage( dmg );
+                                                Game.Instance.DisplayText( enemy.transform, new Vector2( 0, 1.95f ), new Vector3( 0, 2f ), gameUnit.combinedStrength.ToString(), Color.red );
+                        Game.Instance.DisplayText( enemy.transform, new Vector2( 0, 2f ), new Vector3( 0, 2f ), gameUnit.combinedStrength.ToString(), Color.black );
                     }
                 }
             }

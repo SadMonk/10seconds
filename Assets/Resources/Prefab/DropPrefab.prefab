@@ -32,7 +32,7 @@ GameObject:
   - 114: {fileID: 11400004}
   m_Layer: 0
   m_Name: DropPrefab
-  m_TagString: Untagged
+  m_TagString: Drop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,6 +152,7 @@ MonoBehaviour:
   CurrentFrame: 0
   AnimationSpeed: 0
   NextAnimationUpdate: 0
+  lastDirection: 0
   Size: .00999999978
 --- !u!114 &11400004
 MonoBehaviour:
