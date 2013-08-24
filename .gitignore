@@ -20,3 +20,5 @@ obj/
 !Library/guidmapper
 !Library/unity default resources
 !Library/unity editor resources
+/Library/assetDatabase3
+/Library/guidmapper
