@@ -10,13 +10,20 @@ public class Player : MonoBehaviour {
 	public int dodgeChance = 0;
 	public int skinThickness = 0;
 	
-	Dictionary<string,List<Buff>> buffs;
+	private Dictionary<string,List<Buff>> buffs;
 	
+	public void PickUpBuff(Buff buff) {
+		string buffType = buff.getType();
+		if(!buffs.ContainsKey(buffType)) {
+			buffs[bufftype] = new List<Buff>();
+		}
+		buffs[buffType].Add(buff);
+	}
 	
 	
 	// Use this for initialization
-	void Start () {
-	
+	void Start () {		
+		
 	}
 	
 	// Update is called once per frame
