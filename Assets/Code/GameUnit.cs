@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 
-public class BuffTest : MonoBehaviour
+public class Buff
 {
     public int bonusStrength = 0;
     public int bonusAttackSpeed = 0;
@@ -16,13 +16,21 @@ public class BuffTest : MonoBehaviour
 
 public class GameUnit : MonoBehaviour
 {
+	public int baseStrength = 0;
+	public int baseAttackSpeed = 0;
+	public int baseWalkSpeed = 0;
+	public int baseDodgeChance = 0;
+	public int baseSkinThickness = 0;
+	
     public int strength = 0;
     public int attackSpeed = 0;
     public int walkSpeed = 0;
     public int dodgeChance = 0;
     public int skinThickness = 0;
+	
+	public int hitPoints = 100;
 
-    Queue<BuffTest> buffs = new Queue<BuffTest>();
+    Queue<Buff> buffs = new Queue<Buff>();
 	
 	// Update is called once per frame
 	void Update ()
@@ -32,7 +40,7 @@ public class GameUnit : MonoBehaviour
 
     void UpdateBuffs()
     {
-        BuffTest buff = buffs.Peek();
+        Buff buff = buffs.Peek();
         if( buff == null ) return;
         if( buff.EndTime > Time.time ) return;
 
@@ -45,7 +53,7 @@ public class GameUnit : MonoBehaviour
         UpdateBuffs();
     }
 
-    public void AddBuff( BuffTest buff )
+    public void AddBuff( Buff buff )
     {
         strength += buff.bonusStrength;
         attackSpeed += buff.bonusAttackSpeed;
