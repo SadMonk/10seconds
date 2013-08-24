@@ -10,6 +10,7 @@ obj/
 *.unityproj
 
 !Library/*.asset
+!Library/assetDatabase3
 !Library/AssetImportState
 !Library/AssetVersioning.db
 !Library/BuildPlayer.prefs
