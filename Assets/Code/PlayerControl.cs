@@ -15,8 +15,14 @@ public class PlayerControl : MonoBehaviour
 
     void FixedUpdate()
     {
-        movement.Move(
-            -Convert.ToSingle( Input.GetKey( KeyCode.LeftArrow ) ) + Convert.ToSingle( Input.GetKey( KeyCode.RightArrow ) ),
-            -Convert.ToSingle( Input.GetKey( KeyCode.DownArrow ) ) + Convert.ToSingle( Input.GetKey( KeyCode.UpArrow ) ) );
+        float x = 0;
+        float y = 0;
+
+        if( Input.GetKey( KeyCode.LeftArrow ) ) x -= 1f;
+        if( Input.GetKey( KeyCode.RightArrow ) ) x += 1f;
+        if( Input.GetKey( KeyCode.DownArrow ) ) y -= 1f;
+        if( Input.GetKey( KeyCode.UpArrow ) ) y += 1f;
+
+        movement.Move( x, y );
     }
 }
