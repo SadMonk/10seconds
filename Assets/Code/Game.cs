@@ -7,9 +7,11 @@ public class Game : MonoBehaviour {
 	public Player player;
 	public List<Enemy> enemies;
 	List<Buff> buffs;
+	public List<Drop> drops;
 
     GameObject PlayerPrefab;
     GameObject EnemyPrefab;
+	GameObject DropPrefab;
 
     CameraComponent camera;
 
@@ -19,6 +21,7 @@ public class Game : MonoBehaviour {
     {
         PlayerPrefab = (GameObject)Resources.Load( "Prefab/PlayerPrefab", typeof( GameObject ) );
         EnemyPrefab = (GameObject)Resources.Load( "Prefab/EnemyPrefab", typeof( GameObject ) );
+		DropPrefab = (GameObject)Resources.Load( "Prefab/DropPrefab" , typeof( GameObject) );
     }
 
     Player SpawnPlayer( Vector3 position )
@@ -34,6 +37,12 @@ public class Game : MonoBehaviour {
         return enemy.GetComponent<Enemy>();
 	}
 	
+	Drop SpawnDrop ( Vector3 position )
+	{
+		GameObject drop = GameObject.Instantiate( DropPrefab, position, Quaternion.identity ) as GameObject;
+		return drop.GetComponent<Drop>();
+	}
+	
 	// Use this for initialization
 	void Start () {
         Instance = this;
@@ -41,6 +50,10 @@ public class Game : MonoBehaviour {
         camera = (CameraComponent)FindObjectOfType( typeof( CameraComponent ) );
         player = SpawnPlayer( Vector3.zero );
         enemies.Add( SpawnEnemy( new Vector3( -5, 0, 0 ) ) );
+		Drop testDrop = SpawnDrop( new Vector3( 5, 0, 0 ) );
+		testDrop.buff=new Buff();
+		testDrop.buff.bonusWalkSpeed=10;		
+		drops.Add( testDrop );
 		Debug.Log("game initialized");
 	}
 	
