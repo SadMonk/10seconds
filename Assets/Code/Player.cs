@@ -59,7 +59,9 @@ public class Player : MonoBehaviour
                     if( enemy != null )
                     {
                         int dmg = gameUnit.combinedStrength;
+                        Vector3 directionToEnemy = Vector3.Normalize( enemy.transform.GetChild( 0 ).position - transform.GetChild( 0 ).position );
                         enemy.GetComponent<GameUnit>().ReceiveDamage( dmg );
+                        enemy.rigidbody.AddForce( directionToEnemy * 2500f );
                         Game.Instance.DisplayText( enemy.transform, new Vector2( 0, 1.95f ), new Vector3( 0, 2f ), gameUnit.combinedStrength.ToString(), Color.red );
                         Game.Instance.DisplayText( enemy.transform, new Vector2( 0, 2f ), new Vector3( 0, 2f ), gameUnit.combinedStrength.ToString(), Color.black );
                     }
