@@ -12,6 +12,7 @@ public class Game : MonoBehaviour {
     GameObject PlayerPrefab;
     GameObject EnemyPrefab;
 	GameObject DropPrefab;
+    GameObject DamageTextPrefab;
 
     CameraComponent camera;
 
@@ -22,6 +23,7 @@ public class Game : MonoBehaviour {
         PlayerPrefab = (GameObject)Resources.Load( "Prefab/PlayerPrefab", typeof( GameObject ) );
         EnemyPrefab = (GameObject)Resources.Load( "Prefab/EnemyPrefab", typeof( GameObject ) );
 		DropPrefab = (GameObject)Resources.Load( "Prefab/DropPrefab" , typeof( GameObject) );
+        DamageTextPrefab = (GameObject)Resources.Load( "Prefab/DamageText", typeof( GameObject ) );
     }
 
     Player SpawnPlayer( Vector3 position )
@@ -56,6 +58,20 @@ public class Game : MonoBehaviour {
 		drops.Add( testDrop );
 		Debug.Log("game initialized");
 	}
+
+    public void DisplayText( Transform target, Vector2 offset, Vector2 velocity, string text, Color color, int size = 20 )
+    {
+        GameObject go = GameObject.Instantiate( DamageTextPrefab ) as GameObject;
+        ObjectLabel ol = go.GetComponent<ObjectLabel>();
+        GUIText gt = go.GetComponent<GUIText>();
+        ol.target = target;
+        ol.velocity = velocity;
+        ol.offset = offset;
+        gt.text = text;
+        gt.color = color;
+        gt.fontSize = size;
+        GameObject.Destroy( go, 1f );
+    }
 	
 	// Update is called once per frame
 	void Update () {
