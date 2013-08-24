@@ -18,6 +18,14 @@ public enum Animation
     AttackTL
 }
 
+public enum Direction
+{
+    TR,
+    BR,
+    BL,
+    TL
+}
+
 public class SpriteAnimation
 {
     public Animation animation;
@@ -154,6 +162,27 @@ public class SpriteComponent : MonoBehaviour
             meshRenderer.material.mainTextureScale = new Vector2( 1f / (float)ActiveTextureFrames, 1f );
             UpdateUV();
         }
+    }
+
+    public void UseStandAnimation( float speed )
+    {
+
+    }
+
+    public void UseWalkAnimation( float speed, Direction direction )
+    {
+        switch( direction )
+        {
+            case Direction.TR: SetAnimation( Animation.WalkTR, speed ); break;
+            case Direction.BR: SetAnimation( Animation.WalkBR, speed ); break;
+            case Direction.BL: SetAnimation( Animation.WalkBL, speed ); break;
+            case Direction.TL: SetAnimation( Animation.WalkTL, speed ); break;
+        }
+    }
+
+    public void UseAttackAnimation( float speed, Direction direction )
+    {
+
     }
 
     public void EnableSprites( params SpriteAnimation[] newAnimations )
