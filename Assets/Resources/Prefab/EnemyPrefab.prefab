@@ -33,6 +33,7 @@ GameObject:
   - 114: {fileID: 11400006}
   - 114: {fileID: 11400008}
   - 114: {fileID: 11400010}
+  - 114: {fileID: 11400012}
   m_Layer: 0
   m_Name: EnemyPrefab
   m_TagString: Untagged
@@ -59,7 +60,7 @@ Transform:
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.55999994, y: 5.11999989, z: 1}
+  m_LocalScale: {x: 3.3900001, y: 4.44000006, z: 1}
   m_Children:
   - {fileID: 400000}
   m_Father: {fileID: 0}
@@ -133,14 +134,14 @@ MonoBehaviour:
   TStandBLFrames: 0
   TStandTL: {fileID: 0}
   TStandTLFrames: 0
-  TWalkTR: {fileID: 2800000, guid: 5b44e6c257ae590498673571ba936298, type: 3}
-  TWalkTRFrames: 1
-  TWalkBR: {fileID: 2800000, guid: 5b44e6c257ae590498673571ba936298, type: 3}
-  TWalkBRFrames: 1
-  TWalkBL: {fileID: 2800000, guid: 5b44e6c257ae590498673571ba936298, type: 3}
-  TWalkBLFrames: 1
-  TWalkTL: {fileID: 2800000, guid: 5b44e6c257ae590498673571ba936298, type: 3}
-  TWalkTLFrames: 1
+  TWalkTR: {fileID: 2800000, guid: 9bfaab706d7ebe04e9a08a10743048e3, type: 3}
+  TWalkTRFrames: 2
+  TWalkBR: {fileID: 2800000, guid: 0c7c38e960e593044bbe212b5ce487bc, type: 3}
+  TWalkBRFrames: 2
+  TWalkBL: {fileID: 2800000, guid: cea4b823041c8f3419c52fd4a11639a4, type: 3}
+  TWalkBLFrames: 2
+  TWalkTL: {fileID: 2800000, guid: 0876c797a1e20864a9c2ffcd55caac2b, type: 3}
+  TWalkTLFrames: 2
   TAttackTR: {fileID: 0}
   TAttackTRFrames: 0
   TAttackBR: {fileID: 0}
@@ -155,6 +156,7 @@ MonoBehaviour:
   CurrentFrame: 0
   AnimationSpeed: 0
   NextAnimationUpdate: 0
+  lastDirection: 0
   Size: .00999999978
 --- !u!114 &11400004
 MonoBehaviour:
@@ -203,8 +205,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d3f4772ca334ca4683bcebf0ea14cb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: 
   MaxHP: 100
   CurrentHP: 100
+--- !u!114 &11400012
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0b2edf1fb926c8439b694840005b754, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseStrength: 0
+  baseAttackSpeed: 0
+  baseWalkSpeed: 0
+  baseDodgeChance: 0
+  baseSkinThickness: 0
+  strength: 0
+  attackSpeed: 0
+  walkSpeed: 0
+  dodgeChance: 0
+  skinThickness: 0
+  hitPoints: 100
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

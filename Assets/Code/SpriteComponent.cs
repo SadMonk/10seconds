@@ -90,7 +90,7 @@ public class SpriteComponent : MonoBehaviour
     public float NextAnimationUpdate;
 
     Dictionary<Animation, SpriteAnimation> animations = new Dictionary<Animation, SpriteAnimation>();
-    Direction lastDirection;
+    public Direction lastDirection;
 
     public float Size;
 

@@ -27,8 +27,10 @@ public class GameUnit : MonoBehaviour
     public int walkSpeed = 0;
     public int dodgeChance = 0;
     public int skinThickness = 0;
-	
-	public int hitPoints = 100;
+
+    public int hitPoints = 100;
+
+    public int combinedStrength { get { return baseStrength + strength; } }
 
     Queue<Buff> buffs = new Queue<Buff>();
 	
@@ -40,8 +42,8 @@ public class GameUnit : MonoBehaviour
 
     void UpdateBuffs()
     {
+        if( buffs.Count == 0 ) return;
         Buff buff = buffs.Peek();
-        if( buff == null ) return;
         if( buff.EndTime > Time.time ) return;
 
         buffs.Dequeue();
@@ -65,8 +67,19 @@ public class GameUnit : MonoBehaviour
         buffs.Enqueue( buff );
     }
 
+    public void ReceiveDamage( int damage )
+    {
+        Debug.Log( this + " has received " + damage + " damage." );
+        hitPoints -= damage;
+        if( hitPoints <= 0 )
+        {
+            GameObject.Destroy( gameObject );
+        }
+    }
+
     void OnDisable()
     {
-        buffs.Clear();
+        if( !gameObject.activeInHierarchy )
+            buffs.Clear();
     }
 }

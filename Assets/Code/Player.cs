@@ -2,28 +2,68 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Player : MonoBehaviour {
-		
-	private GameUnit gameUnit;
-	
-	/// <summary>
-	/// Picks up buff.
-	/// </summary>
-	/// <param name='buff'>
-	/// The Buff.
-	/// </param>
-	public void PickUpBuff(Buff buff) {
-		gameUnit.AddBuff(buff);
-	}
-	
-	
-	// Use this for initialization
-	void Start () {		
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-				
-	}
+[RequireComponent( typeof( GameUnit ) )]
+public class Player : MonoBehaviour
+{
+    private GameUnit gameUnit;
+
+    float lastAttackTime = 0f;
+
+    /// <summary>
+    /// Picks up buff.
+    /// </summary>
+    /// <param name='buff'>
+    /// The Buff.
+    /// </param>
+    public void PickUpBuff( Buff buff )
+    {
+        gameUnit.AddBuff( buff );
+    }
+
+
+    // Use this for initialization
+    void Start()
+    {
+        gameUnit = GetComponent<GameUnit>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    public void Attack( Direction direction )
+    {
+        if( lastAttackTime + 0.5f < Time.time )
+        {
+            Vector3 hitLocation = transform.GetChild( 0 ).position;
+            float radius = 4f;
+
+            switch( direction )
+            {
+                case Direction.TR: hitLocation += new Vector3( radius * 0.66f, radius * 0.66f, 0f ); break;
+                case Direction.BR: hitLocation += new Vector3( radius * 0.66f, -radius * 0.66f, 0f ); break;
+                case Direction.BL: hitLocation += new Vector3( -radius * 0.66f, -radius * 0.66f, 0f ); break;
+                case Direction.TL: hitLocation += new Vector3( -radius * 0.66f, radius * 0.66f, 0f ); break;
+            }
+
+            var colliders = Physics.OverlapSphere( hitLocation, radius );
+
+            foreach( var collider in colliders )
+            {
+                var go = collider.transform.parent.gameObject;
+                if( go != null && go != this.gameObject )
+                {
+                    Enemy enemy = go.GetComponent<Enemy>();
+                    if( enemy != null )
+                    {
+                        enemy.GetComponent<GameUnit>().ReceiveDamage( gameUnit.combinedStrength );
+                    }
+                }
+            }
+
+            lastAttackTime = Time.time;
+        }
+    }
 }

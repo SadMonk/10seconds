@@ -7,12 +7,14 @@ public class PlayerControl : MonoBehaviour
 {
     MovementComponent movement;
     SpriteComponent sprite;
+    Player player;
 
     // Use this for initialization
     void Start()
     {
         movement = GetComponent<MovementComponent>();
         sprite = GetComponent<SpriteComponent>();
+        player = GetComponent<Player>();
     }
 
     void FixedUpdate()
@@ -40,6 +42,11 @@ public class PlayerControl : MonoBehaviour
                 sprite.UseWalkAnimation( 0.1f, Direction.TL );
             else
                 sprite.UseWalkAnimation( 0.1f, Direction.BL );
+        }
+
+        if( Input.GetButton( "Fire1" ) )
+        {
+            player.Attack( sprite.lastDirection );
         }
     }
 }
