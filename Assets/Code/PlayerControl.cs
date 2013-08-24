@@ -12,27 +12,32 @@ public class PlayerControl : MonoBehaviour
         stats = GetComponent<PlayerStats>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        float velX = 0;
+        float velY = 0;
+
         if( Input.GetKey( KeyCode.LeftArrow ) )
         {
-            transform.Translate( new Vector3( -stats.MovementSpeed * Time.deltaTime, 0, 0 ) );
+            velX -= stats.MovementSpeed;
         }
 
         if( Input.GetKey( KeyCode.RightArrow ) )
         {
-            transform.Translate( new Vector3( stats.MovementSpeed * Time.deltaTime, 0, 0 ) );
+            velX += stats.MovementSpeed;
         }
 
         if( Input.GetKey( KeyCode.UpArrow ) )
         {
-            transform.Translate( new Vector3( 0, stats.MovementSpeed * Time.deltaTime, 0 ) );
+            velY += stats.MovementSpeed;
         }
 
         if( Input.GetKey( KeyCode.DownArrow ) )
         {
-            transform.Translate( new Vector3( 0, -stats.MovementSpeed * Time.deltaTime, 0 ) );
+            velY -= stats.MovementSpeed;
         }
+
+        rigidbody.velocity = new Vector3( velX, velY, 0f );
+
     }
 }
