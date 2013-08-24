@@ -15,7 +15,7 @@ public class Player : MonoBehaviour {
 	public void PickUpBuff(Buff buff) {
 		string buffType = buff.getType();
 		if(!buffs.ContainsKey(buffType)) {
-			buffs[bufftype] = new List<Buff>();
+			buffs[buffType] = new List<Buff>();
 		}
 		buffs[buffType].Add(buff);
 	}
