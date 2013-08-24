@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PlayerStats : MonoBehaviour
 {
+	public int hitpoints = 100;	
+	
 	// Use this for initialization
 	void Start ()
     {

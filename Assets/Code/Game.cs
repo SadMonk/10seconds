@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Game : MonoBehaviour {
 	
 	Player player;
-	Enemy[] enemies;
-	Buff[] buffs;
+	List<Enemy> enemies;
+	List<Buff> buffs;
 
     GameObject PlayerPrefab;
     GameObject EnemyPrefab;
@@ -23,6 +24,12 @@ public class Game : MonoBehaviour {
         camera.FollowTarget = player;
         return player.GetComponent<Player>();
     }
+	
+	Enemy SpawnEnemy ( Vector3 position )
+	{
+		GameObject enemy = GameObject.Instantiate( EnemyPrefab, position, Quaternion.identity ) as GameObject;
+		this.enemies.Add(enemy.GetComponent<Enemy>());
+	}
 	
 	// Use this for initialization
 	void Start () {
