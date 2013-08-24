@@ -29,6 +29,12 @@ public class ObjectLabel : MonoBehaviour
 
     void Update()
     {
+        if( target == null )
+        {
+            Destroy( this );
+            return;
+        }
+
         offset += velocity * Time.deltaTime;
 
         if( clampToScreen )
