@@ -5,8 +5,8 @@ using System.Collections.Generic;
 public class Game : MonoBehaviour {
 	
 	public Player player;
-	public List<Enemy> enemies = new List<Enemy>();
-	Buff[] buffs;
+	public List<Enemy> enemies;
+	List<Buff> buffs;
 
     GameObject PlayerPrefab;
     GameObject EnemyPrefab;
@@ -27,12 +27,12 @@ public class Game : MonoBehaviour {
         camera.FollowTarget = player;
         return player.GetComponent<Player>();
     }
-
-    Enemy SpawnEnemy( Vector3 position )
-    {
-        GameObject enemy = GameObject.Instantiate( EnemyPrefab, position, Quaternion.identity ) as GameObject;
+	
+	Enemy SpawnEnemy ( Vector3 position )
+	{
+		GameObject enemy = GameObject.Instantiate( EnemyPrefab, position, Quaternion.identity ) as GameObject;
         return enemy.GetComponent<Enemy>();
-    }
+	}
 	
 	// Use this for initialization
 	void Start () {
@@ -40,7 +40,7 @@ public class Game : MonoBehaviour {
         LoadPrefabs();
         camera = (CameraComponent)FindObjectOfType( typeof( CameraComponent ) );
         player = SpawnPlayer( Vector3.zero );
-        enemies.Add( SpawnEnemy( new Vector3( -10, 0, 0 ) ) );
+        enemies.Add( SpawnEnemy( new Vector3( -5, 0, 0 ) ) );
 		Debug.Log("game initialized");
 	}
 	
