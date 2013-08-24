@@ -114,6 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   enemies: []
+  drops: []
 --- !u!1 &664405177
 GameObject:
   m_ObjectHideFlags: 0
