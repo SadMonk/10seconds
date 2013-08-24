@@ -4,26 +4,22 @@ using System.Collections.Generic;
 
 public class Player : MonoBehaviour {
 		
-	public int strength = 0;
-	public int attackSpeed = 0;
-	public int walkSpeed = 0;
-	public int dodgeChance = 0;
-	public int skinThickness = 0;
+	private GameUnit gameUnit;
 	
-	private Dictionary<int,List<Buff>> buffs;
-	
+	/// <summary>
+	/// Picks up buff.
+	/// </summary>
+	/// <param name='buff'>
+	/// The Buff.
+	/// </param>
 	public void PickUpBuff(Buff buff) {
-		int buffType = buff.getType();
-		if(!buffs.ContainsKey(buffType)) {
-			buffs[buffType] = new List<Buff>();
-		}
-		buffs[buffType].Add(buff);
+		gameUnit.AddBuff(buff);
 	}
 	
 	
 	// Use this for initialization
 	void Start () {		
-		buffs = new Dictionary<int, List<Buff>>();
+		
 	}
 	
 	// Update is called once per frame
