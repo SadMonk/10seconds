@@ -90,6 +90,7 @@ public class SpriteComponent : MonoBehaviour
     public float NextAnimationUpdate;
 
     Dictionary<Animation, SpriteAnimation> animations = new Dictionary<Animation, SpriteAnimation>();
+    Direction lastDirection;
 
     public float Size;
 
@@ -166,7 +167,13 @@ public class SpriteComponent : MonoBehaviour
 
     public void UseStandAnimation( float speed )
     {
-
+        switch( lastDirection )
+        {
+            case Direction.TR: SetAnimation( Animation.StandTR, speed ); break;
+            case Direction.BR: SetAnimation( Animation.StandBR, speed ); break;
+            case Direction.BL: SetAnimation( Animation.StandBL, speed ); break;
+            case Direction.TL: SetAnimation( Animation.StandTL, speed ); break;
+        }
     }
 
     public void UseWalkAnimation( float speed, Direction direction )
@@ -178,11 +185,21 @@ public class SpriteComponent : MonoBehaviour
             case Direction.BL: SetAnimation( Animation.WalkBL, speed ); break;
             case Direction.TL: SetAnimation( Animation.WalkTL, speed ); break;
         }
+
+        lastDirection = direction;
     }
 
     public void UseAttackAnimation( float speed, Direction direction )
     {
+        switch( direction )
+        {
+            case Direction.TR: SetAnimation( Animation.AttackTR, speed ); break;
+            case Direction.BR: SetAnimation( Animation.AttackBR, speed ); break;
+            case Direction.BL: SetAnimation( Animation.AttackBL, speed ); break;
+            case Direction.TL: SetAnimation( Animation.AttackTL, speed ); break;
+        }
 
+        lastDirection = direction;
     }
 
     public void EnableSprites( params SpriteAnimation[] newAnimations )

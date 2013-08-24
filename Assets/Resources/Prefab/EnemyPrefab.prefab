@@ -149,9 +149,9 @@ MonoBehaviour:
   TAttackBLFrames: 0
   TAttackTL: {fileID: 0}
   TAttackTLFrames: 0
-  ActiveAnimation: 0
+  ActiveAnimation: 8
   ActiveTexture: {fileID: 0}
-  ActiveTextureFrames: 0
+  ActiveTextureFrames: 1
   CurrentFrame: 0
   AnimationSpeed: 0
   NextAnimationUpdate: 0
