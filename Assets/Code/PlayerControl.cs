@@ -6,11 +6,13 @@ using System;
 public class PlayerControl : MonoBehaviour
 {
     MovementComponent movement;
+    SpriteComponent sprite;
 
     // Use this for initialization
     void Start()
     {
         movement = GetComponent<MovementComponent>();
+        sprite = GetComponent<SpriteComponent>();
     }
 
     void FixedUpdate()
@@ -18,11 +20,26 @@ public class PlayerControl : MonoBehaviour
         float x = 0;
         float y = 0;
 
-        if( Input.GetKey( KeyCode.LeftArrow ) ) x -= 1f;
-        if( Input.GetKey( KeyCode.RightArrow ) ) x += 1f;
-        if( Input.GetKey( KeyCode.DownArrow ) ) y -= 1f;
-        if( Input.GetKey( KeyCode.UpArrow ) ) y += 1f;
+        if( Input.GetAxis( "Horizontal" ) < 0 ) x -= 1f;
+        if( Input.GetAxis( "Horizontal" ) > 0 ) x += 1f;
+        if( Input.GetAxis( "Vertical" ) < 0 ) y -= 1f;
+        if( Input.GetAxis( "Vertical" ) > 0 ) y += 1f;
 
         movement.Move( x, y );
+
+        if( x > 0 )
+        {
+            if( y > 0 )
+                sprite.UseWalkAnimation( 0.1f, Direction.TR );
+            else
+                sprite.UseWalkAnimation( 0.1f, Direction.BR );
+        }
+        else
+        {
+            if( y > 0 )
+                sprite.UseWalkAnimation( 0.1f, Direction.TL );
+            else
+                sprite.UseWalkAnimation( 0.1f, Direction.BL );
+        }
     }
 }

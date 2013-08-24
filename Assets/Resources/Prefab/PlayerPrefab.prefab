@@ -16,6 +16,7 @@ GameObject:
   - 54: {fileID: 5400000}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400010}
+  - 114: {fileID: 11400012}
   m_Layer: 0
   m_Name: PlayerPrefab
   m_TagString: Untagged
@@ -203,6 +204,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b17af132c09e9f4bb8362affe0b860c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  strength: 0
+  attackSpeed: 0
+  walkSpeed: 0
+  dodgeChance: 0
+  skinThickness: 0
+--- !u!114 &11400012
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d3f4772ca334ca4683bcebf0ea14cb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHP: 1000
+  CurrentHP: 1000
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
