@@ -5,7 +5,7 @@ using System.Collections.Generic;
 [RequireComponent( typeof( GameUnit ) )]
 public class Player : MonoBehaviour
 {
-    private GameUnit gameUnit;
+    public GameUnit gameUnit;
 	private MovementComponent movementComponent;
 
     float lastAttackTime = 0f;
@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
 
     public void Attack( Direction direction )
     {
-        if( lastAttackTime + 0.5f < Time.time )
+        if( lastAttackTime + ( 1f / gameUnit.combinedAttackSpeed ) < Time.time )
         {
             Vector3 hitLocation = transform.GetChild( 0 ).position;
             float radius = 4f;
@@ -63,7 +63,7 @@ public class Player : MonoBehaviour
                     {
                         int dmg = gameUnit.combinedStrength;
                         enemy.GetComponent<GameUnit>().ReceiveDamage( dmg );
-                                                Game.Instance.DisplayText( enemy.transform, new Vector2( 0, 1.95f ), new Vector3( 0, 2f ), gameUnit.combinedStrength.ToString(), Color.red );
+                        Game.Instance.DisplayText( enemy.transform, new Vector2( 0, 1.95f ), new Vector3( 0, 2f ), gameUnit.combinedStrength.ToString(), Color.red );
                         Game.Instance.DisplayText( enemy.transform, new Vector2( 0, 2f ), new Vector3( 0, 2f ), gameUnit.combinedStrength.ToString(), Color.black );
                     }
                 }
