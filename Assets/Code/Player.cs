@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class Player : MonoBehaviour
 {
     public GameUnit gameUnit;
-	private MovementComponent movementComponent;
+	public MovementComponent movementComponent;
 
     float lastAttackTime = 0f;
 
@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     {
         gameUnit = GetComponent<GameUnit>();
 		movementComponent = GetComponent<MovementComponent>();
+		gameUnit.baseWalkSpeed = (int)movementComponent.MovementSpeed;
     }
 
     // Update is called once per frame
@@ -99,7 +100,7 @@ public class Player : MonoBehaviour
 	
 	private void UpdateStats()
 	{
-		
+		movementComponent.MovementSpeed = gameUnit.combinedWalkSpeed;
 	}
 	
 	

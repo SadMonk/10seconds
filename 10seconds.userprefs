@@ -1,6 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\Player.cs">
+    <Files>
+      <File FileName="Assets\Code\BuffTypes.cs" Line="7" Column="45" />
+      <File FileName="Assets\Code\GameUnit.cs" Line="61" Column="6" />
+      <File FileName="Assets\Code\Player.cs" Line="30" Column="60" />
+      <File FileName="Assets\Code\Game.cs" Line="40" Column="3" />
+      <File FileName="Assets\Code\Drop.cs" Line="6" Column="19" />
+      <File FileName="Assets\Code\PlayerCollider.cs" Line="8" Column="2" />
+      <File FileName="Assets\Code\MovementComponent.cs" Line="17" Column="6" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
