@@ -15,10 +15,10 @@ public class EnemyAI : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update ()
+    void Update()
     {
-        Vector2 currentPos = transform.position;
-        Vector2 targetPos = Game.Instance.player.transform.position;
+        Vector2 currentPos = transform.GetChild( 0 ).position;
+        Vector2 targetPos = Game.Instance.player.transform.GetChild( 0 ).position;
 
         Vector2 distance = targetPos - currentPos;
         distance.Normalize();
@@ -38,5 +38,5 @@ public class EnemyAI : MonoBehaviour
             else
                 sprite.UseWalkAnimation( 0.1f, Direction.BL );
         }
-	}
+    }
 }

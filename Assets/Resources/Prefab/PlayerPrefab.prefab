@@ -11,13 +11,11 @@ GameObject:
   - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
   - 114: {fileID: 11400004}
-  - 114: {fileID: 11400006}
   - 114: {fileID: 11400008}
   - 54: {fileID: 5400000}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400010}
-  - 114: {fileID: 11400012}
-  - 114: {fileID: 11400014}
+  - 114: {fileID: 11400016}
   m_Layer: 0
   m_Name: PlayerPrefab
   m_TagString: Untagged
@@ -165,26 +163,14 @@ MonoBehaviour:
   TAttackBLFrames: 0
   TAttackTL: {fileID: 0}
   TAttackTLFrames: 0
-  ActiveAnimation: 8
+  ActiveAnimation: 0
   ActiveTexture: {fileID: 0}
-  ActiveTextureFrames: 1
+  ActiveTextureFrames: 0
   CurrentFrame: 0
   AnimationSpeed: 0
   NextAnimationUpdate: 0
   lastDirection: 0
   Size: .00999999978
---- !u!114 &11400006
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b38e14e16ab2154c83821eabd78e86b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitpoints: 100
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -207,22 +193,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b17af132c09e9f4bb8362affe0b860c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11400012
+--- !u!114 &11400014
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
+  m_GameObject: {fileID: 100002}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d3f4772ca334ca4683bcebf0ea14cb8, type: 3}
+  m_Script: {fileID: 11500000, guid: 7daea03d7da1e884491c72dce15cbdd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EditorClassIdentifier: 
-  m_EditorClassIdentifier: 
-  MaxHP: 1000
-  CurrentHP: 1000
---- !u!114 &11400014
+--- !u!114 &11400016
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -244,13 +226,6 @@ MonoBehaviour:
   dodgeChance: 0
   skinThickness: 0
   hitPoints: 100
-=======
-  m_GameObject: {fileID: 100002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7daea03d7da1e884491c72dce15cbdd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
