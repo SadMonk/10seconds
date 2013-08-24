@@ -1,15 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
-public class Buff : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
+public interface Buff {
 	
-	}
+	void enable(Player player);
+	void checkEnd();	
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 }
