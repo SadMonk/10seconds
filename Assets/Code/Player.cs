@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class Player : MonoBehaviour
 {
     private GameUnit gameUnit;
+	private MovementComponent movementComponent;
 
     float lastAttackTime = 0f;
 
@@ -25,12 +26,14 @@ public class Player : MonoBehaviour
     void Start()
     {
         gameUnit = GetComponent<GameUnit>();
+		movementComponent = GetComponent<MovementComponent>();
     }
 
     // Update is called once per frame
     void Update()
     {
-		this.CheckForDrop();		
+		CheckForDrop();	
+		UpdateStats();
     }
 
     public void Attack( Direction direction )
@@ -93,5 +96,11 @@ public class Player : MonoBehaviour
             }
         }
 	}
+	
+	private void UpdateStats()
+	{
+		
+	}
+	
 	
 }
