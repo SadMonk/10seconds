@@ -40,7 +40,7 @@ public class GameUnit : MonoBehaviour
 	void Update ()
     {
         UpdateBuffs();
-	}
+	}	
 
     void UpdateBuffs()
     {

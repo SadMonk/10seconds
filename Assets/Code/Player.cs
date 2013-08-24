@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+		this.CheckForDrop();		
     }
 
     public void Attack( Direction direction )
@@ -69,4 +69,29 @@ public class Player : MonoBehaviour
             lastAttackTime = Time.time;
         }
     }
+	
+	/// <summary>
+	/// Checks for a nearby drop and - if found - picks it up.
+	/// </summary>
+	private void CheckForDrop()
+	{		
+		Vector3 hitLocation = transform.GetChild( 0 ).position;
+		float radius = 4f;
+		var colliders = Physics.OverlapSphere( hitLocation, radius );
+		
+        foreach( var collider in colliders )
+        {
+            var go = collider.transform.parent.gameObject;
+            if( go != null && go != this.gameObject )
+            {
+                Drop drop = go.GetComponent<Drop>();
+                if( drop != null )
+                {
+					this.PickUpBuff(drop.buff);					
+                    Destroy(go);
+                }
+            }
+        }
+	}
+	
 }
