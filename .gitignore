@@ -1,6 +1,6 @@
 Thumbs.db
 Temp/
-Library/
+Library/*
 obj/
 *.svd
 *.suo
