@@ -38,8 +38,7 @@ public class Player : MonoBehaviour
     {
         if( lastAttackTime + ( 1f / gameUnit.combinedAttackSpeed ) < Time.time )
         {
-            AudioSource hitsound = (AudioSource)gameObject.GetComponent<AudioSource>();
-            hitsound.Play();
+            
             Vector3 hitLocation = transform.GetChild( 0 ).position;
             float radius = 4f;
 
@@ -53,7 +52,9 @@ public class Player : MonoBehaviour
             }
 
             var colliders = Physics.OverlapSphere( hitLocation, radius );
-
+            
+            bool weHitSomething = false;
+            
             foreach( var collider in colliders )
             {
                 var go = collider.transform.parent.gameObject;
@@ -62,16 +63,21 @@ public class Player : MonoBehaviour
                     Enemy enemy = go.GetComponent<Enemy>();
                     if( enemy != null )
                     {
+                        weHitSomething = true;
                         int dmg = Mathf.Max(1,gameUnit.combinedStrength);
                         Vector3 directionToEnemy = Vector3.Normalize( enemy.transform.GetChild( 0 ).position - transform.GetChild( 0 ).position );
-                        enemy.GetComponent<GameUnit>().ReceiveDamage( dmg );
+                        int damageDealt = enemy.GetComponent<GameUnit>().ReceiveDamage( dmg );
                         enemy.rigidbody.AddForce( directionToEnemy * 2500f );
-                        Game.Instance.DisplayText( enemy.transform, new Vector3( 0, 1.95f, 0f ), new Vector3( 0, 2f ), gameUnit.combinedStrength.ToString(), Color.white );
-                        Game.Instance.DisplayText( enemy.transform, new Vector3( 0, 2f, -0.001f ), new Vector3( 0, 2f ), gameUnit.combinedStrength.ToString(), Color.black );
+                        Game.Instance.DisplayText( enemy.transform, new Vector3( 0, 1.95f, 0f ), new Vector3( 0, 2f ), damageDealt.ToString(), Color.white );
+                        Game.Instance.DisplayText( enemy.transform, new Vector3( 0, 2f, -0.001f ), new Vector3( 0, 2f ), damageDealt.ToString(), Color.black );
                     }
                 }
             }
-
+            if(weHitSomething)
+            {
+                AudioSource hitsound = (AudioSource)gameObject.GetComponent<AudioSource>();
+                hitsound.Play();
+            }
             lastAttackTime = Time.time;
             return true;
         }
@@ -87,7 +93,7 @@ public class Player : MonoBehaviour
 	private void CheckForDrop()
 	{		
 		Vector3 hitLocation = transform.GetChild( 0 ).position;
-		float radius = 2f + 2 * gameUnit.magnet;
+		float radius = 2f;
 		var colliders = Physics.OverlapSphere( hitLocation, radius );
 		
         foreach( var collider in colliders )

@@ -45,7 +45,7 @@ public class Enemy : MonoBehaviour
                 drop = (GameObject)Resources.Load( "Prefab/AttackSpeedDropPrefab", typeof( GameObject ) );
                 break;
             case BuffTypes.WalkingSpeed:
-                drop = (GameObject)Resources.Load( "Prefab/WalkinSpeedDropPrefab", typeof( GameObject ) );
+                drop = (GameObject)Resources.Load( "Prefab/WalkingSpeedDropPrefab", typeof( GameObject ) );
                 break;
             case BuffTypes.SkinThickness:
                 drop = (GameObject)Resources.Load( "Prefab/SkinThicknessDropPrefab", typeof( GameObject ) );
@@ -88,7 +88,6 @@ public class Enemy : MonoBehaviour
 
     void dropBuff( GameObject dropPrefab )
     {
-        Debug.Log( "Enemy Dead. Dropping Buff at:" + transform.GetChild( 0 ).position );
         Game.Instance.SpawnDrop( transform.GetChild( 0 ).position, dropPrefab );
     }
 
@@ -99,9 +98,9 @@ public class Enemy : MonoBehaviour
             if( Game.Instance.player != null )
             {
                 int dmg = gameUnit.combinedStrength;
-                Game.Instance.player.GetComponent<GameUnit>().ReceiveDamage( dmg );
-                Game.Instance.DisplayText( Game.Instance.player.transform, new Vector2( 0, 1.95f ), new Vector2( 0, 2f ), gameUnit.combinedStrength.ToString(), Color.red );
-                Game.Instance.DisplayText( Game.Instance.player.transform, new Vector3( 0, 2f, -0.001f ), new Vector3( 0, 2f ), gameUnit.combinedStrength.ToString(), Color.black );
+                int damageDealt = Game.Instance.player.GetComponent<GameUnit>().ReceiveDamage( dmg );
+                Game.Instance.DisplayText( Game.Instance.player.transform, new Vector2( 0, 1.95f ), new Vector2( 0, 2f ), damageDealt.ToString(), Color.red );
+                Game.Instance.DisplayText( Game.Instance.player.transform, new Vector3( 0, 2f, -0.001f ), new Vector3( 0, 2f ), damageDealt.ToString(), Color.black );
                 lastAttackTime = Time.time;
             }
         }

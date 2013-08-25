@@ -98,15 +98,25 @@ public class GameUnit : MonoBehaviour
         if( buff.whirlwind > 0 ) buff.EndTime += 10000000;
         buffs.Enqueue( buff );
     }
-
-    public void ReceiveDamage( int damage )
+ 
+    /// <summary>
+    /// Receives the damage.
+    /// </summary>
+    /// <returns>
+    /// The actual damage that was dealt.
+    /// </returns>
+    /// <param name='damage'>
+    /// The damage that should be dealt.
+    /// </param>
+    public int ReceiveDamage( int damage )
     {
         int actualDamage = (int) Mathf.Round(Mathf.Max(damage * (1.20f - skinThickness * 0.05f),1f));
-        hitPoints -= damage;
+        hitPoints -= actualDamage;
         if( hitPoints <= 0 )
         {
             GameObject.Destroy( gameObject );
         }
+        return actualDamage;
     }
 
     void OnDisable()
