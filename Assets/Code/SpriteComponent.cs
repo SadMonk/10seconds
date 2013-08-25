@@ -105,7 +105,7 @@ public class SpriteComponent : MonoBehaviour
         transform.localScale = new Vector3( width, height, 1 );
     }
 
-    void Start()
+    void Awake()
     {
         meshRenderer = GetComponent<MeshRenderer>();
 
