@@ -47,6 +47,7 @@ public class Player : MonoBehaviour
                 case Direction.BR: hitLocation += new Vector3( radius * 0.66f, -radius * 0.66f, 0f ); break;
                 case Direction.BL: hitLocation += new Vector3( -radius * 0.66f, -radius * 0.66f, 0f ); break;
                 case Direction.TL: hitLocation += new Vector3( -radius * 0.66f, radius * 0.66f, 0f ); break;
+                case Direction.ALL: hitLocation += Vector3.zero; radius *= 2f; break;
             }
 
             var colliders = Physics.OverlapSphere( hitLocation, radius );
@@ -63,8 +64,8 @@ public class Player : MonoBehaviour
                         Vector3 directionToEnemy = Vector3.Normalize( enemy.transform.GetChild( 0 ).position - transform.GetChild( 0 ).position );
                         enemy.GetComponent<GameUnit>().ReceiveDamage( dmg );
                         enemy.rigidbody.AddForce( directionToEnemy * 2500f );
-                        Game.Instance.DisplayText( enemy.transform, new Vector2( 0, 1.95f ), new Vector3( 0, 2f ), gameUnit.combinedStrength.ToString(), Color.white );
-                        Game.Instance.DisplayText( enemy.transform, new Vector2( 0, 2f ), new Vector3( 0, 2f ), gameUnit.combinedStrength.ToString(), Color.black );
+                        Game.Instance.DisplayText( enemy.transform, new Vector3( 0, 1.95f, 0f ), new Vector3( 0, 2f ), gameUnit.combinedStrength.ToString(), Color.white );
+                        Game.Instance.DisplayText( enemy.transform, new Vector3( 0, 2f, -0.001f ), new Vector3( 0, 2f ), gameUnit.combinedStrength.ToString(), Color.black );
                     }
                 }
             }

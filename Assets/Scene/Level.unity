@@ -400,6 +400,7 @@ MonoBehaviour:
   drops: []
   LastSpawnTime: 0
   SpawnRate: 4
+  SpawnAmount: 2
   KillCount: 0
 --- !u!1 &341896786
 GameObject:

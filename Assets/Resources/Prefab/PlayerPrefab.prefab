@@ -161,6 +161,8 @@ MonoBehaviour:
   TAttackBLFrames: 2
   TAttackTL: {fileID: 2800000, guid: c4efeac56a217f2499f68de69992aaf8, type: 3}
   TAttackTLFrames: 2
+  TWhirl: {fileID: 2800000, guid: 02515366aa110034490990d0340b624d, type: 3}
+  TWhirlFrames: 4
   ActiveAnimation: 0
   ActiveTexture: {fileID: 0}
   ActiveTextureFrames: 0
@@ -234,6 +236,8 @@ MonoBehaviour:
   bonusVsOrcs: 0
   bonusVsGoblins: 0
   hitPoints: 100
+  IsWhirlwindEnabled: 0
+  WhirlWindEndTime: 0
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -15,7 +15,8 @@ public enum Animation
     AttackTR,
     AttackBR,
     AttackBL,
-    AttackTL
+    AttackTL,
+    Whirl
 }
 
 public enum Direction
@@ -23,7 +24,8 @@ public enum Direction
     TR,
     BR,
     BL,
-    TL
+    TL,
+    ALL
 }
 
 public class SpriteAnimation
@@ -79,6 +81,8 @@ public class SpriteComponent : MonoBehaviour
     public Texture2D TAttackTL;
     public int TAttackTLFrames;
 
+    public Texture2D TWhirl;
+    public int TWhirlFrames;
 
 
     public Animation ActiveAnimation;
@@ -122,7 +126,8 @@ public class SpriteComponent : MonoBehaviour
             new SpriteAnimation( Animation.AttackTR, TAttackTR, TAttackTRFrames ),
             new SpriteAnimation( Animation.AttackBR, TAttackBR, TAttackBRFrames ),
             new SpriteAnimation( Animation.AttackBL, TAttackBL, TAttackBLFrames ),
-            new SpriteAnimation( Animation.AttackTL, TAttackTL, TAttackTLFrames )
+            new SpriteAnimation( Animation.AttackTL, TAttackTL, TAttackTLFrames ),
+            new SpriteAnimation( Animation.Whirl, TWhirl, TWhirlFrames )
             );
 
         SetAnimation( Animation.WalkBL, 0.1f );
@@ -208,6 +213,12 @@ public class SpriteComponent : MonoBehaviour
 
         lastDirection = direction;
         forcedAnimation = true;
+    }
+
+    public void UseWhirlAnimation( float speed )
+    {
+        forcedAnimation = false;
+        SetAnimation( Animation.Whirl, speed );
     }
 
     public void EnableSprites( params SpriteAnimation[] newAnimations )

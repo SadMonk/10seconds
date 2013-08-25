@@ -61,10 +61,17 @@ public class GameUnit : MonoBehaviour
 
     Queue<Buff> buffs = new Queue<Buff>();
 	
+    // active buff states
+    public bool IsWhirlwindEnabled = false;
+    public float WhirlWindEndTime = 0f;
+
 	// Update is called once per frame
 	void Update ()
     {
         UpdateBuffs();
+
+        if( WhirlWindEndTime < Time.time )
+            IsWhirlwindEnabled = false;
 	}	
 
     void UpdateBuffs()
@@ -114,6 +121,7 @@ public class GameUnit : MonoBehaviour
         bonusVsGoblins += buff.bonusVsGoblins;
         
         buff.EndTime = Time.time + 10f;
+        if( buff.whirlwind > 0 ) buff.EndTime += 10000000;
         buffs.Enqueue( buff );
     }
 

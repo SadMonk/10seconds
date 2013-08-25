@@ -38,6 +38,13 @@ public class PlayerControl : MonoBehaviour
         Direction direction = sprite.lastDirection;
         float animationSpeed = 0.1f;
 
+        if( gameUnit.IsWhirlwindEnabled )
+        {
+            sprite.UseWhirlAnimation( animationSpeed );
+            player.Attack( Direction.ALL );
+            return;
+        }
+
         float x = 0;
         float y = 0;
 
@@ -79,10 +86,19 @@ public class PlayerControl : MonoBehaviour
             }
         }
 
-
         if( force != Vector3.zero )
             sprite.UseWalkAnimation( animationSpeed, direction );
         else
             sprite.UseStandAnimation( animationSpeed );
+
+        if( Input.GetButtonDown( "Fire2" ) )
+        {
+//             if( gameUnit.whirlwind > 0 )
+//             {
+                gameUnit.IsWhirlwindEnabled = true;
+                gameUnit.WhirlWindEndTime = Time.time + 10f;
+                gameUnit.whirlwind--;
+            //}
+        }
     }
 }

@@ -85,7 +85,7 @@ public class Game : MonoBehaviour
 		Debug.Log("game initialized");
 	}
     
-    public void DisplayText( Transform target, Vector2 offset, Vector2 velocity, string text, Color color, int size = 20 )
+    public void DisplayText( Transform target, Vector3 offset, Vector3 velocity, string text, Color color, int size = 20 )
     {
         GameObject go = GameObject.Instantiate( DamageTextPrefab ) as GameObject;
         ObjectLabel ol = go.GetComponent<ObjectLabel>();
