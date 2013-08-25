@@ -98,9 +98,7 @@ public class Enemy : MonoBehaviour
             if( Game.Instance.player != null )
             {
                 int dmg = gameUnit.combinedStrength;
-                int damageDealt = Game.Instance.player.GetComponent<GameUnit>().ReceiveDamage( dmg );
-                Game.Instance.DisplayText( Game.Instance.player.transform, new Vector2( 0, 1.95f ), new Vector2( 0, 2f ), damageDealt.ToString(), Color.red );
-                Game.Instance.DisplayText( Game.Instance.player.transform, new Vector3( 0, 2f, -0.001f ), new Vector3( 0, 2f ), damageDealt.ToString(), Color.black );
+                Game.Instance.player.GetComponent<GameUnit>().ReceiveDamage( dmg );
                 lastAttackTime = Time.time;
             }
         }
