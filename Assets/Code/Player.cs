@@ -66,8 +66,6 @@ public class Player : MonoBehaviour
                         Vector3 directionToEnemy = Vector3.Normalize( enemy.transform.GetChild( 0 ).position - transform.GetChild( 0 ).position );
                         enemy.GetComponent<GameUnit>().ReceiveDamage( dmg );
                         enemy.rigidbody.AddForce( directionToEnemy * 2500f );
-                        Game.Instance.DisplayText( enemy.transform, new Vector3( 0, 1.95f, 0f ), new Vector3( 0, 2f ), gameUnit.combinedStrength.ToString(), Color.white );
-                        Game.Instance.DisplayText( enemy.transform, new Vector3( 0, 2f, -0.001f ), new Vector3( 0, 2f ), gameUnit.combinedStrength.ToString(), Color.black );
                     }
                 }
             }

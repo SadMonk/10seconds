@@ -13,12 +13,11 @@ public class ObjectLabel : MonoBehaviour
     public bool useMainCamera = true;   // Use the camera tagged MainCamera
     public Camera cameraToUse;   // Only use this if useMainCamera is false
     Camera cam;
-    Transform thisTransform;
     Transform camTransform;
+    Vector3 lastPosition;
 
     void Start()
     {
-        thisTransform = transform;
         if( useMainCamera )
             cam = Camera.main;
         else
@@ -29,27 +28,25 @@ public class ObjectLabel : MonoBehaviour
 
     void Update()
     {
-        if( target == null )
-        {
-            Destroy( this );
-            return;
-        }
-
         offset += velocity * Time.deltaTime;
+
+        if( target != null )
+            lastPosition = target.transform.position;
+        else
+            Destroy( gameObject );
 
         if( clampToScreen )
         {
             Vector3 relativePosition = camTransform.InverseTransformPoint( target.position );
             relativePosition.z = Mathf.Max( relativePosition.z, 1.0f );
-            thisTransform.position = cam.WorldToViewportPoint( camTransform.TransformPoint( relativePosition + offset ) );
-            thisTransform.position = new Vector3( Mathf.Clamp( thisTransform.position.x, clampBorderSize, 1.0f - clampBorderSize ),
-                                             Mathf.Clamp( thisTransform.position.y, clampBorderSize, 1.0f - clampBorderSize ),
-                                             thisTransform.position.z );
-
+            transform.position = cam.WorldToViewportPoint( camTransform.TransformPoint( relativePosition + offset ) );
+            transform.position = new Vector3( Mathf.Clamp( transform.position.x, clampBorderSize, 1.0f - clampBorderSize ),
+                                                Mathf.Clamp( transform.position.y, clampBorderSize, 1.0f - clampBorderSize ),
+                                                transform.position.z );
         }
         else
         {
-            thisTransform.position = cam.WorldToViewportPoint( target.position + offset );
+            transform.position = cam.WorldToViewportPoint( lastPosition + offset );
         }
     }
 }

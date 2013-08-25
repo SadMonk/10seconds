@@ -101,8 +101,12 @@ public class GameUnit : MonoBehaviour
 
     public void ReceiveDamage( int damage )
     {
-        int actualDamage = (int) Mathf.Round(Mathf.Max(damage * (1.20f - skinThickness * 0.05f),1f));
-        hitPoints -= damage;
+        Color textColor = GetComponent<Enemy>() ? Color.white : Color.red;
+
+        int actualDamage = (int)Mathf.Round( Mathf.Max( damage * ( 1.20f - (float)skinThickness * 0.05f ), 1f ) );
+        hitPoints -= actualDamage;
+        Game.Instance.DisplayText( transform, new Vector3( 0, 1.95f, 0f ), new Vector3( 0, 2f ), actualDamage.ToString(), textColor );
+        Game.Instance.DisplayText( transform, new Vector3( 0, 2f, -0.001f ), new Vector3( 0, 2f ), actualDamage.ToString(), Color.black );
         if( hitPoints <= 0 )
         {
             GameObject.Destroy( gameObject );

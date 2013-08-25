@@ -100,8 +100,6 @@ public class Enemy : MonoBehaviour
             {
                 int dmg = gameUnit.combinedStrength;
                 Game.Instance.player.GetComponent<GameUnit>().ReceiveDamage( dmg );
-                Game.Instance.DisplayText( Game.Instance.player.transform, new Vector2( 0, 1.95f ), new Vector2( 0, 2f ), gameUnit.combinedStrength.ToString(), Color.red );
-                Game.Instance.DisplayText( Game.Instance.player.transform, new Vector3( 0, 2f, -0.001f ), new Vector3( 0, 2f ), gameUnit.combinedStrength.ToString(), Color.black );
                 lastAttackTime = Time.time;
             }
         }
