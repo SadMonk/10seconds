@@ -72,7 +72,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 9df7655d32ff0e44dba1e669e72b5f2c, type: 2}
+  - {fileID: 2100000, guid: 9263496177b54654ba80e6b99c7ff450, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -166,6 +166,15 @@ MonoBehaviour:
   bonusWalkSpeed: 0
   bonusDodgeChance: 0
   bonusSkinThickness: 0
+  chainLightning: 0
+  flameThrower: 0
+  explosion: 0
+  spikes: 0
+  chainsaw: 0
+  magnet: 0
+  whirlwind: 0
+  bonusVsOrcs: 0
+  bonusVsGoblins: 0
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
