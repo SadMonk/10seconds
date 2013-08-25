@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEditor;
 
-[CustomEditor( typeof( SpriteComponent ) )]
+[CustomEditor( typeof( StaticSprite ) )]
 public class SpriteScaler : Editor
 {
     public override void OnInspectorGUI()
@@ -11,7 +11,7 @@ public class SpriteScaler : Editor
 
         if( GUILayout.Button( "Set Size" ) )
         {
-            SpriteComponent component = (SpriteComponent)target;
+            StaticSprite component = (StaticSprite)target;
             component.UpdateSize();
         }
     }

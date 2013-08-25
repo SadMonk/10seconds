@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseStrength: 5
-  baseAttackSpeed: 2
+  baseAttackSpeed: 6
   baseWalkSpeed: 100
   baseDodgeChance: 0
   baseSkinThickness: 0

@@ -2,10 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Game : MonoBehaviour {
-	
+public class Game : MonoBehaviour
+{
+    public static Game Instance;
+
 	public Player player;
 	public List<Enemy> enemies;
+    public List<GameObject> spawners;
 	List<Buff> buffs;
 	public List<Drop> drops;
 
@@ -16,7 +19,8 @@ public class Game : MonoBehaviour {
 
     CameraComponent camera;
 
-    public static Game Instance;
+    public float LastSpawnTime = 0f;
+    public float SpawnRate = 4f;
 
     void LoadPrefabs()
     {
@@ -24,6 +28,16 @@ public class Game : MonoBehaviour {
         EnemyPrefab = (GameObject)Resources.Load( "Prefab/EnemyPrefab", typeof( GameObject ) );
 		DropPrefab = (GameObject)Resources.Load( "Prefab/DropPrefab" , typeof( GameObject) );
         DamageTextPrefab = (GameObject)Resources.Load( "Prefab/DamageText", typeof( GameObject ) );
+    }
+
+    void LoadSpawners()
+    {
+        foreach( var obj in FindObjectsOfType( typeof( GameObject ) ) )
+        {
+            var go = obj as GameObject;
+            if( go.tag == "Spawner" )
+                spawners.Add( go );
+        }
     }
 
     Player SpawnPlayer( Vector3 position )
@@ -49,6 +63,7 @@ public class Game : MonoBehaviour {
 	void Start () {
         Instance = this;
         LoadPrefabs();
+        LoadSpawners();
         camera = (CameraComponent)FindObjectOfType( typeof( CameraComponent ) );
         player = SpawnPlayer( Vector3.zero );
         enemies.Add( SpawnEnemy( new Vector3( -5, 0, 0 ) ) );
@@ -72,9 +87,20 @@ public class Game : MonoBehaviour {
         gt.fontSize = size;
         GameObject.Destroy( go, 1f );
     }
+
+    public void TriggerSpawners()
+    {
+        if( LastSpawnTime + SpawnRate < Time.time )
+        {
+            var randomSpawner = spawners[Random.Range( 0, spawners.Count - 1 )];
+            SpawnEnemy( randomSpawner.transform.position );
+            LastSpawnTime = Time.time;
+        }
+    }
 	
 	// Update is called once per frame
-	void Update () {
-	
+	void Update ()
+    {
+        TriggerSpawners();
 	}
 }
