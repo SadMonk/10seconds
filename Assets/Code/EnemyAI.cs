@@ -22,9 +22,6 @@ public class EnemyAI : MonoBehaviour
 
         Vector3 distance = targetPos - currentPos;
 
-
-        Debug.Log( distance.magnitude );
-
         // Attack if in range
         if( distance.magnitude < attackRange )
             enemy.AttackPlayer();

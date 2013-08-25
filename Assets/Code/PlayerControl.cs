@@ -59,9 +59,12 @@ public class PlayerControl : MonoBehaviour
             sprite.UseWalkAnimation( 0.1f, sprite.lastDirection );
         }
 
+
+
         if( Input.GetButton( "Fire1" ) )
         {
             player.Attack( sprite.lastDirection );
+            sprite.UseAttackAnimation( 0.1f, sprite.lastDirection );
         }
     }
 }
