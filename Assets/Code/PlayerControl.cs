@@ -2,10 +2,8 @@
 using System.Collections;
 using System;
 
-[RequireComponent( typeof( MovementComponent ) )]
 public class PlayerControl : MonoBehaviour
 {
-    MovementComponent movement;
     SpriteComponent sprite;
     Player player;
     GameUnit gameUnit;
@@ -13,7 +11,6 @@ public class PlayerControl : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
-        movement = GetComponent<MovementComponent>();
         sprite = GetComponent<SpriteComponent>();
         player = GetComponent<Player>();
         gameUnit = GetComponent<GameUnit>();

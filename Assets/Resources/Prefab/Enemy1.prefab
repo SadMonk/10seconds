@@ -29,10 +29,10 @@ GameObject:
   - 23: {fileID: 2300000}
   - 114: {fileID: 11400002}
   - 54: {fileID: 5400000}
-  - 114: {fileID: 11400004}
   - 114: {fileID: 11400006}
   - 114: {fileID: 11400008}
   - 114: {fileID: 11400012}
+  - 114: {fileID: 11400004}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Enemy
@@ -168,8 +168,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fbb72c671106ba4cb398913aec4e50b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementSpeed: 4
-  Velocity: {x: 0, y: 0, z: 0}
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1

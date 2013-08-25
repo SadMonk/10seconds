@@ -1,17 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent( typeof( MovementComponent ) )]
 public class EnemyAI : MonoBehaviour
 {
-    MovementComponent movement;
     SpriteComponent sprite;
     Enemy enemy;
 
 	// Use this for initialization
 	void Awake ()
     {
-        movement = GetComponent<MovementComponent>();
         sprite = GetComponent<SpriteComponent>();
         enemy = GetComponent<Enemy>();
 	}
