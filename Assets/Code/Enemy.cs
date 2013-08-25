@@ -32,10 +32,9 @@ public class Enemy : MonoBehaviour
 
     void dropStuff()
     {
-        BuffTypes buffType = (BuffTypes)Random.Range( 0, System.Enum.GetValues( typeof( BuffTypes ) ).Length ); // we want a number between 0 and 4 
+        BuffTypes buffType = (BuffTypes)Random.Range( 0, System.Enum.GetValues( typeof( BuffTypes ) ).Length ); 
 
         GameObject drop = null;
-
 
         switch( buffType )
         {
@@ -47,9 +46,6 @@ public class Enemy : MonoBehaviour
                 break;
             case BuffTypes.WalkingSpeed:
                 drop = (GameObject)Resources.Load( "Prefab/WalkinSpeedDropPrefab", typeof( GameObject ) );
-                break;
-            case BuffTypes.Dodge:
-                drop = (GameObject)Resources.Load( "Prefab/DodgeDropPrefab", typeof( GameObject ) );
                 break;
             case BuffTypes.SkinThickness:
                 drop = (GameObject)Resources.Load( "Prefab/SkinThicknessDropPrefab", typeof( GameObject ) );
@@ -73,17 +69,8 @@ public class Enemy : MonoBehaviour
             case BuffTypes.NegativeStrength:
                 drop = (GameObject)Resources.Load( "Prefab/NegativeStrengthDropPrefab", typeof( GameObject ) );
                 break;
-            case BuffTypes.NegativeAttackSpeed:
-                drop = (GameObject)Resources.Load( "Prefab/NegativeAttackSpeedDropPrefab", typeof( GameObject ) );
-                break;
             case BuffTypes.NegativeWalkSpeed:
                 drop = (GameObject)Resources.Load( "Prefab/NegativeWalkSpeedDropPrefab", typeof( GameObject ) );
-                break;
-            case BuffTypes.NegativeDodge:
-                drop = (GameObject)Resources.Load( "Prefab/NegativeDodgeDropPrefab", typeof( GameObject ) );
-                break;
-            case BuffTypes.NegativeSkinThickness:
-                drop = (GameObject)Resources.Load( "Prefab/NegativeSkinThicknessDropPrefab", typeof( GameObject ) );
                 break;
             case BuffTypes.NegativeBomb:
                 drop = (GameObject)Resources.Load( "Prefab/NegativeBombDropPrefab", typeof( GameObject ) );

@@ -8,7 +8,6 @@ public class Buff
     public int bonusStrength = 0;
     public int bonusAttackSpeed = 0;
     public int bonusWalkSpeed = 0;
-    public int bonusDodgeChance = 0;
     public int bonusSkinThickness = 0;
           
     public int chainLightning = 0;
@@ -25,13 +24,11 @@ public class GameUnit : MonoBehaviour
 	public int baseStrength = 0;
 	public int baseAttackSpeed = 0;
 	public int baseWalkSpeed = 0;
-	public int baseDodgeChance = 0;
 	public int baseSkinThickness = 0;
 	
     public int strength = 0;
     public int attackSpeed = 0;
     public int walkSpeed = 0;
-    public int dodgeChance = 0;
     public int skinThickness = 0;    
       
     public int chainLightning = 0;
@@ -46,7 +43,6 @@ public class GameUnit : MonoBehaviour
     public int combinedStrength { get { return baseStrength + strength*5; } }
     public float combinedAttackSpeed { get { return (float)( baseAttackSpeed + attackSpeed ) * 0.25f; } }
     public float combinedWalkSpeed { get { return (float)( baseWalkSpeed + walkSpeed*2 ); } }
-    public float combinedDodgeChance {get {return (float)( baseDodgeChance + dodgeChance*0.03f);}}
     public float combinedSkinThickness {get {return (float)( baseSkinThickness + skinThickness*0.05f);}}
 
     Queue<Buff> buffs = new Queue<Buff>();
@@ -74,7 +70,6 @@ public class GameUnit : MonoBehaviour
         strength -= buff.bonusStrength;
         attackSpeed -= buff.bonusAttackSpeed;
         walkSpeed -= buff.bonusWalkSpeed;
-        dodgeChance -= buff.bonusDodgeChance;
         skinThickness -= buff.bonusSkinThickness;
         
         chainLightning -= buff.chainLightning;
@@ -91,7 +86,6 @@ public class GameUnit : MonoBehaviour
         strength += buff.bonusStrength;
         attackSpeed += buff.bonusAttackSpeed;
         walkSpeed += buff.bonusWalkSpeed;
-        dodgeChance += buff.bonusDodgeChance;
         skinThickness += buff.bonusSkinThickness;
   
         chainLightning += buff.chainLightning;
