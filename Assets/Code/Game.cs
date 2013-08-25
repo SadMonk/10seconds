@@ -53,9 +53,10 @@ public class Game : MonoBehaviour
         return enemy.GetComponent<Enemy>();
 	}
 	
-	Drop SpawnDrop ( Vector3 position )
+	public Drop SpawnDrop ( Vector3 position, GameObject dropPrefab )
 	{
-		GameObject drop = GameObject.Instantiate( DropPrefab, position, Quaternion.identity ) as GameObject;
+		GameObject drop = GameObject.Instantiate( dropPrefab, position, Quaternion.identity ) as GameObject;
+        // Todo: add drop to drop-list in here?
 		return drop.GetComponent<Drop>();
 	}
 	
@@ -67,7 +68,7 @@ public class Game : MonoBehaviour
         camera = (CameraComponent)FindObjectOfType( typeof( CameraComponent ) );
         player = SpawnPlayer( Vector3.zero );
         enemies.Add( SpawnEnemy( new Vector3( -5, 0, 0 ) ) );
-		Drop testDrop = SpawnDrop( new Vector3( 5, 0, 0 ) );
+		Drop testDrop = SpawnDrop( new Vector3( 5, 0, 0 ) , DropPrefab );
 		testDrop.buff=new Buff();
 		testDrop.buff.bonusWalkSpeed=10;		
 		drops.Add( testDrop );
