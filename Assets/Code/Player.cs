@@ -95,12 +95,25 @@ public class Player : MonoBehaviour
                 Drop drop = go.GetComponent<Drop>();
                 if( drop != null )
                 {
+                    // build a buff and pick it up.
                     Buff buff = new Buff();
                     buff.bonusAttackSpeed = drop.bonusAttackSpeed;
                     buff.bonusDodgeChance = drop.bonusDodgeChance;
                     buff.bonusSkinThickness = drop.bonusSkinThickness;
                     buff.bonusStrength = drop.bonusStrength;
                     buff.bonusWalkSpeed = drop.bonusWalkSpeed;
+                    
+                    buff.chainLightning = drop.chainLightning;
+                    buff.flameThrower = drop.flameThrower;
+                    buff.explosion = drop.explosion;
+                    buff.spikes = drop.spikes;
+                    buff.chainsaw = drop.chainsaw;
+                    
+                    buff.magnet = drop.magnet;
+                    buff.whirlwind = drop.whirlwind;
+                    buff.bonusVsOrcs = drop.bonusVsOrcs;
+                    buff.bonusVsGoblins = drop.bonusVsGoblins;                    
+                    
 					this.PickUpBuff(buff);					
                     Destroy(go);
                 }

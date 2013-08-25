@@ -10,7 +10,18 @@ public class Buff
     public int bonusWalkSpeed = 0;
     public int bonusDodgeChance = 0;
     public int bonusSkinThickness = 0;
-
+          
+    public int chainLightning = 0;
+    public int flameThrower = 0;
+    public int explosion = 0;
+    public int spikes = 0;
+    public int chainsaw = 0;
+    
+    public int magnet = 0;
+    public int whirlwind = 0;
+    public int bonusVsOrcs = 0;
+    public int bonusVsGoblins = 0;   
+     
     public float EndTime;
 }
 
@@ -26,18 +37,19 @@ public class GameUnit : MonoBehaviour
     public int attackSpeed = 0;
     public int walkSpeed = 0;
     public int dodgeChance = 0;
-    public int skinThickness = 0;
-    
+    public int skinThickness = 0;    
+      
     public int chainLightning = 0;
-    public int Flamethrower = 0;
-    public int Explosion = 0;
-    public int Spikes = 0;
-    public int Chainsaw = 0;
+    public int flameThrower = 0;
+    public int explosion = 0;
+    public int spikes = 0;
+    public int chainsaw = 0;
     
-    public int Magnet = 0;
-    public int Whirlwind = 0;
-    public int BonusVsOrcs = 0;
-    public int BonusVsGoblins = 0;
+    public int magnet = 0;
+    public int whirlwind = 0;
+    public int bonusVsOrcs = 0;
+    public int bonusVsGoblins = 0;   
+     
 
     public int hitPoints = 100;
 
@@ -67,6 +79,18 @@ public class GameUnit : MonoBehaviour
         walkSpeed -= buff.bonusWalkSpeed;
         dodgeChance -= buff.bonusDodgeChance;
         skinThickness -= buff.bonusSkinThickness;
+        
+        chainLightning -= buff.chainLightning;
+        flameThrower -= buff.flameThrower;
+        explosion -= buff.explosion;
+        spikes -= buff.spikes;
+        chainsaw -= buff.chainsaw;
+        
+        magnet -= buff.magnet;
+        whirlwind -= buff.whirlwind;
+        bonusVsOrcs -= buff.bonusVsOrcs;
+        bonusVsGoblins -= buff.bonusVsGoblins;
+        
         UpdateBuffs();
     }
 
@@ -77,7 +101,18 @@ public class GameUnit : MonoBehaviour
         walkSpeed += buff.bonusWalkSpeed;
         dodgeChance += buff.bonusDodgeChance;
         skinThickness += buff.bonusSkinThickness;
-
+  
+        chainLightning += buff.chainLightning;
+        flameThrower += buff.flameThrower;
+        explosion += buff.explosion;
+        spikes += buff.spikes;
+        chainsaw += buff.chainsaw;
+        
+        magnet += buff.magnet;
+        whirlwind += buff.whirlwind;
+        bonusVsOrcs += buff.bonusVsOrcs;
+        bonusVsGoblins += buff.bonusVsGoblins;
+        
         buff.EndTime = Time.time + 10f;
         buffs.Enqueue( buff );
     }
