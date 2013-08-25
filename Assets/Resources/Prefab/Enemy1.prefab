@@ -191,6 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cafae22db845b9b448d86fef29046b7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackRange: 2
 --- !u!114 &11400012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -202,8 +203,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b2edf1fb926c8439b694840005b754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseStrength: 0
-  baseAttackSpeed: 0
+  baseStrength: 1
+  baseAttackSpeed: 3
   baseWalkSpeed: 75
   baseDodgeChance: 0
   baseSkinThickness: 0

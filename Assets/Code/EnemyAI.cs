@@ -6,6 +6,8 @@ public class EnemyAI : MonoBehaviour
     SpriteComponent sprite;
     Enemy enemy;
 
+    public float attackRange = 0.4f;
+
 	// Use this for initialization
 	void Awake ()
     {
@@ -19,12 +21,18 @@ public class EnemyAI : MonoBehaviour
         Vector2 targetPos = Game.Instance.player.transform.GetChild( 0 ).position;
 
         Vector3 distance = targetPos - currentPos;
+
+
+        Debug.Log( distance.magnitude );
+
+        // Attack if in range
+        if( distance.magnitude < attackRange )
+            enemy.AttackPlayer();
+
         distance.Normalize();
-        //movement.Move( distance.x, distance.y );
 
         Vector3 force = distance * enemy.gameUnit.combinedWalkSpeed;
         rigidbody.AddForce( force );
-        //Debug.Log( force );
 
         if( distance.x > 0 )
         {
@@ -41,7 +49,7 @@ public class EnemyAI : MonoBehaviour
                 sprite.UseWalkAnimation( 0.1f, Direction.BL );
         }
     }
-	
+
 	// Update is called once per frame
     void Update()
     {
