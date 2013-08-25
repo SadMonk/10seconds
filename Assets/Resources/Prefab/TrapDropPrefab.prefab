@@ -30,7 +30,7 @@ GameObject:
   - 114: {fileID: 11400006}
   - 114: {fileID: 11400004}
   m_Layer: 0
-  m_Name: ExplosionDropPrefab
+  m_Name: TrapDropPrefab
   m_TagString: Drop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,14 +123,9 @@ MonoBehaviour:
   bonusDodgeChance: 0
   bonusSkinThickness: 0
   chainLightning: 0
-  flameThrower: 0
-  explosion: 1
-  spikes: 0
-  chainsaw: 0
+  trap: 0
   magnet: 0
   whirlwind: 0
-  bonusVsOrcs: 0
-  bonusVsGoblins: 0
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

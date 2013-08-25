@@ -123,6 +123,12 @@ public class Player : MonoBehaviour
 	{
 		// update speed here :3
 	}
-	
-	
+
+    void OnDestroy()
+    {
+        if( !Game.isShuttingDown )
+        {
+            Application.LoadLevel( "MainMenu" );
+        }
+    }
 }
