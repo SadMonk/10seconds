@@ -1,11 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MovementComponent : MonoBehaviour
-{
-    public float MovementSpeed;
-    public Vector3 Velocity;
-
+public class ZLevelSorter : MonoBehaviour
+{   
     public const float ZLevelMultiplyer = 0.001f;
 
 	// Use this for initialization
