@@ -27,7 +27,6 @@ GameObject:
   - 4: {fileID: 400002}
   - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
-  - 114: {fileID: 11400002}
   - 114: {fileID: 11400006}
   - 114: {fileID: 11400004}
   m_Layer: 0
@@ -96,49 +95,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 895a4decbdf3bf1409b0a00bcb136d1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11400002
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 422b8d9119f18f14f98fe3068760ad5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TStandTR: {fileID: 0}
-  TStandTRFrames: 0
-  TStandBR: {fileID: 0}
-  TStandBRFrames: 0
-  TStandBL: {fileID: 0}
-  TStandBLFrames: 0
-  TStandTL: {fileID: 0}
-  TStandTLFrames: 0
-  TWalkTR: {fileID: 2800000, guid: 5b44e6c257ae590498673571ba936298, type: 3}
-  TWalkTRFrames: 1
-  TWalkBR: {fileID: 2800000, guid: 5b44e6c257ae590498673571ba936298, type: 3}
-  TWalkBRFrames: 1
-  TWalkBL: {fileID: 2800000, guid: f53ecd81d60d02545b05cef356a359a2, type: 3}
-  TWalkBLFrames: 1
-  TWalkTL: {fileID: 2800000, guid: 5b44e6c257ae590498673571ba936298, type: 3}
-  TWalkTLFrames: 1
-  TAttackTR: {fileID: 0}
-  TAttackTRFrames: 0
-  TAttackBR: {fileID: 0}
-  TAttackBRFrames: 0
-  TAttackBL: {fileID: 0}
-  TAttackBLFrames: 0
-  TAttackTL: {fileID: 0}
-  TAttackTLFrames: 0
-  ActiveAnimation: 0
-  ActiveTexture: {fileID: 2800000, guid: f53ecd81d60d02545b05cef356a359a2, type: 3}
-  ActiveTextureFrames: 0
-  CurrentFrame: 0
-  AnimationSpeed: 0
-  NextAnimationUpdate: 0
-  lastDirection: 0
-  Size: .00999999978
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
