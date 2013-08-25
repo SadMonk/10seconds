@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
 		UpdateStats();
     }
 
-    public void Attack( Direction direction )
+    public bool Attack( Direction direction )
     {
         if( lastAttackTime + ( 1f / gameUnit.combinedAttackSpeed ) < Time.time )
         {
@@ -70,6 +70,11 @@ public class Player : MonoBehaviour
             }
 
             lastAttackTime = Time.time;
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 	

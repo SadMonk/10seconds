@@ -93,6 +93,7 @@ public class SpriteComponent : MonoBehaviour
     public Direction lastDirection;
 
     public float Size;
+    bool forcedAnimation = false;
 
     MeshRenderer meshRenderer;
 
@@ -137,7 +138,10 @@ public class SpriteComponent : MonoBehaviour
             NextAnimationUpdate = Time.time + AnimationSpeed;
 
             if( CurrentFrame == ActiveTextureFrames )
+            {
                 CurrentFrame = 0;
+                forcedAnimation = false;
+            }
 
             UpdateUV();
         }
@@ -167,6 +171,7 @@ public class SpriteComponent : MonoBehaviour
 
     public void UseStandAnimation( float speed )
     {
+        if( forcedAnimation ) return;
         switch( lastDirection )
         {
             case Direction.TR: SetAnimation( Animation.StandTR, speed ); break;
@@ -178,6 +183,7 @@ public class SpriteComponent : MonoBehaviour
 
     public void UseWalkAnimation( float speed, Direction direction )
     {
+        if( forcedAnimation ) return;
         switch( direction )
         {
             case Direction.TR: SetAnimation( Animation.WalkTR, speed ); break;
@@ -191,6 +197,7 @@ public class SpriteComponent : MonoBehaviour
 
     public void UseAttackAnimation( float speed, Direction direction )
     {
+        if( forcedAnimation ) return;
         switch( direction )
         {
             case Direction.TR: SetAnimation( Animation.AttackTR, speed ); break;
@@ -200,6 +207,7 @@ public class SpriteComponent : MonoBehaviour
         }
 
         lastDirection = direction;
+        forcedAnimation = true;
     }
 
     public void EnableSprites( params SpriteAnimation[] newAnimations )
