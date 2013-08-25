@@ -38,6 +38,8 @@ public class Player : MonoBehaviour
     {
         if( lastAttackTime + ( 1f / gameUnit.combinedAttackSpeed ) < Time.time )
         {
+            AudioSource hitsound = (AudioSource)gameObject.GetComponent<AudioSource>();
+            hitsound.Play();
             Vector3 hitLocation = transform.GetChild( 0 ).position;
             float radius = 4f;
 
