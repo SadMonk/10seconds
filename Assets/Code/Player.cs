@@ -38,6 +38,8 @@ public class Player : MonoBehaviour
     {
         if( lastAttackTime + ( 1f / gameUnit.combinedAttackSpeed ) < Time.time )
         {
+            AudioSource hitsound = (AudioSource)gameObject.GetComponent<AudioSource>();
+            hitsound.Play();
             Vector3 hitLocation = transform.GetChild( 0 ).position;
             float radius = 4f;
 
@@ -85,7 +87,7 @@ public class Player : MonoBehaviour
 	private void CheckForDrop()
 	{		
 		Vector3 hitLocation = transform.GetChild( 0 ).position;
-		float radius = 4f;
+		float radius = 2f + 2 * gameUnit.magnet;
 		var colliders = Physics.OverlapSphere( hitLocation, radius );
 		
         foreach( var collider in colliders )
@@ -105,15 +107,10 @@ public class Player : MonoBehaviour
                     buff.bonusWalkSpeed = drop.bonusWalkSpeed;
                     
                     buff.chainLightning = drop.chainLightning;
-                    buff.flameThrower = drop.flameThrower;
-                    buff.explosion = drop.explosion;
-                    buff.spikes = drop.spikes;
-                    buff.chainsaw = drop.chainsaw;
+                    buff.trap = drop.trap;
                     
                     buff.magnet = drop.magnet;
-                    buff.whirlwind = drop.whirlwind;
-                    buff.bonusVsOrcs = drop.bonusVsOrcs;
-                    buff.bonusVsGoblins = drop.bonusVsGoblins;                    
+                    buff.whirlwind = drop.whirlwind;                   
                     
 					this.PickUpBuff(buff);					
                     Destroy(go);

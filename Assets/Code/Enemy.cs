@@ -58,29 +58,17 @@ public class Enemy : MonoBehaviour
             case BuffTypes.ChainLightning:
                 drop = (GameObject)Resources.Load( "Prefab/ChainLightningDropPrefab", typeof( GameObject ) );
                 break;
-            case BuffTypes.FlameThrower:
-                drop = (GameObject)Resources.Load( "Prefab/FlameThrowerDropPrefab", typeof( GameObject ) );
-                break;
-            case BuffTypes.Explosion:
-                drop = (GameObject)Resources.Load( "Prefab/ExplosionDropPrefab", typeof( GameObject ) );
+            case BuffTypes.Trap:
+                drop = (GameObject)Resources.Load( "Prefab/TrapDropPrefab", typeof( GameObject ) );
                 break;
             case BuffTypes.Spikes:
                 drop = (GameObject)Resources.Load( "Prefab/SpikesDropPrefab", typeof( GameObject ) );
-                break;
-            case BuffTypes.Chainsaw:
-                drop = (GameObject)Resources.Load( "Prefab/ChainsawDropPrefab", typeof( GameObject ) );
                 break;
             case BuffTypes.Magnet:
                 drop = (GameObject)Resources.Load( "Prefab/MagnetDropPrefab", typeof( GameObject ) );
                 break;
             case BuffTypes.Whirlwind:
                 drop = (GameObject)Resources.Load( "Prefab/WhirlwindDropPrefab", typeof( GameObject ) );
-                break;
-            case BuffTypes.BonusDmgVsOrcs:
-                drop = (GameObject)Resources.Load( "Prefab/BonusDmgVsOrcsDropPrefab", typeof( GameObject ) );
-                break;
-            case BuffTypes.BonusDmgVsGoblins:
-                drop = (GameObject)Resources.Load( "Prefab/BonusDmgVsGoblinsDropPrefab", typeof( GameObject ) );
                 break;
             case BuffTypes.NegativeStrength:
                 drop = (GameObject)Resources.Load( "Prefab/NegativeStrengthDropPrefab", typeof( GameObject ) );
