@@ -99,6 +99,7 @@ public class GameUnit : MonoBehaviour
 
     public void ReceiveDamage( int damage )
     {
+        int actualDamage = (int) Mathf.Round(Mathf.Max(damage * (1.20f - skinThickness * 0.05f),1f));
         hitPoints -= damage;
         if( hitPoints <= 0 )
         {
