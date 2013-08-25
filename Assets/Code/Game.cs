@@ -22,7 +22,15 @@ public class Game : MonoBehaviour
 
     public float LastSpawnTime = 0f;
     public float SpawnRate = 4f;
+ 
+    public static bool isShuttingDown = false;
 
+    void OnApplicationQuit()
+    {
+        isShuttingDown = true;
+    }
+    
+    
     void LoadPrefabs()
     {
         PlayerPrefab = (GameObject)Resources.Load( "Prefab/PlayerPrefab", typeof( GameObject ) );
