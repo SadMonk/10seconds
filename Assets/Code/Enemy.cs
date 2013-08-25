@@ -16,14 +16,9 @@ public class Enemy : MonoBehaviour {
 		
 	}
     
-    void OnDisable()
+    void OnDestroy()
     {
-        Debug.Log("Disabled?");
-        if( !gameObject.activeInHierarchy )
-        {  
-            Debug.Log("inactive!");
-            dropStuff();
-        }
+        dropStuff();
     }
     
     void dropStuff()
