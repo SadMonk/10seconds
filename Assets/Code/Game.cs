@@ -13,7 +13,8 @@ public class Game : MonoBehaviour
 	public List<Drop> drops;
 
     GameObject PlayerPrefab;
-    GameObject EnemyPrefab;
+    GameObject EnemyPrefab1;
+    GameObject EnemyPrefab2;
 	GameObject DropPrefab;
     GameObject DamageTextPrefab;
 
@@ -25,7 +26,8 @@ public class Game : MonoBehaviour
     void LoadPrefabs()
     {
         PlayerPrefab = (GameObject)Resources.Load( "Prefab/PlayerPrefab", typeof( GameObject ) );
-        EnemyPrefab = (GameObject)Resources.Load( "Prefab/EnemyPrefab", typeof( GameObject ) );
+        EnemyPrefab1 = (GameObject)Resources.Load( "Prefab/Enemy1", typeof( GameObject ) );
+        EnemyPrefab2 = (GameObject)Resources.Load( "Prefab/Enemy2", typeof( GameObject ) );
 		DropPrefab = (GameObject)Resources.Load( "Prefab/DropPrefab" , typeof( GameObject) );
         DamageTextPrefab = (GameObject)Resources.Load( "Prefab/DamageText", typeof( GameObject ) );
     }
@@ -47,9 +49,9 @@ public class Game : MonoBehaviour
         return player.GetComponent<Player>();
     }
 	
-	Enemy SpawnEnemy ( Vector3 position )
+	Enemy SpawnEnemy ( GameObject enemyPrefab, Vector3 position )
 	{
-		GameObject enemy = GameObject.Instantiate( EnemyPrefab, position, Quaternion.identity ) as GameObject;
+		GameObject enemy = GameObject.Instantiate( enemyPrefab, position, Quaternion.identity ) as GameObject;
         return enemy.GetComponent<Enemy>();
 	}
 	
@@ -66,7 +68,8 @@ public class Game : MonoBehaviour
         LoadSpawners();
         camera = (CameraComponent)FindObjectOfType( typeof( CameraComponent ) );
         player = SpawnPlayer( Vector3.zero );
-        enemies.Add( SpawnEnemy( new Vector3( -5, 0, 0 ) ) );
+        enemies.Add( SpawnEnemy( EnemyPrefab1, new Vector3( -5, 0, 0 ) ) );
+        enemies.Add( SpawnEnemy( EnemyPrefab2, new Vector3( 5, 0, 0 ) ) );
 		Drop testDrop = SpawnDrop( new Vector3( 5, 0, 0 ) );
 		testDrop.buff=new Buff();
 		testDrop.buff.bonusWalkSpeed=10;		
@@ -92,8 +95,13 @@ public class Game : MonoBehaviour
     {
         if( LastSpawnTime + SpawnRate < Time.time )
         {
-            var randomSpawner = spawners[Random.Range( 0, spawners.Count - 1 )];
-            SpawnEnemy( randomSpawner.transform.position );
+            var randomSpawner = spawners[Random.Range( 0, spawners.Count )];
+            switch( Random.Range( 0, 2 ) )
+            {
+                case 0: enemies.Add( SpawnEnemy( EnemyPrefab1, randomSpawner.transform.position ) ); break;
+                case 1: enemies.Add( SpawnEnemy( EnemyPrefab2, randomSpawner.transform.position ) ); break;
+            }
+
             LastSpawnTime = Time.time;
         }
     }
