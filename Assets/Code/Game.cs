@@ -85,7 +85,7 @@ public class Game : MonoBehaviour
 		drops.Add( testDrop );
 		Debug.Log("game initialized");
 	}
-
+    
     public void DisplayText( Transform target, Vector2 offset, Vector2 velocity, string text, Color color, int size = 20 )
     {
         GameObject go = GameObject.Instantiate( DamageTextPrefab ) as GameObject;

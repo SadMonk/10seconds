@@ -27,12 +27,25 @@ public class GameUnit : MonoBehaviour
     public int walkSpeed = 0;
     public int dodgeChance = 0;
     public int skinThickness = 0;
+    
+    public int chainLightning = 0;
+    public int Flamethrower = 0;
+    public int Explosion = 0;
+    public int Spikes = 0;
+    public int Chainsaw = 0;
+    
+    public int Magnet = 0;
+    public int Whirlwind = 0;
+    public int BonusVsOrcs = 0;
+    public int BonusVsGoblins = 0;
 
     public int hitPoints = 100;
 
     public int combinedStrength { get { return baseStrength + strength*5; } }
     public float combinedAttackSpeed { get { return (float)( baseAttackSpeed + attackSpeed ) * 0.25f; } }
-    public float combinedWalkSpeed { get { return (float)( baseWalkSpeed + walkSpeed ); } }
+    public float combinedWalkSpeed { get { return (float)( baseWalkSpeed + walkSpeed*2 ); } }
+    public float combinedDodgeChance {get {return (float)( baseDodgeChance + dodgeChance*0.03f);}}
+    public float combinedSkinThickness {get {return (float)( baseSkinThickness + skinThickness*0.05f);}}
 
     Queue<Buff> buffs = new Queue<Buff>();
 	
