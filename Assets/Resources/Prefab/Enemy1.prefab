@@ -149,6 +149,8 @@ MonoBehaviour:
   TAttackBLFrames: 0
   TAttackTL: {fileID: 0}
   TAttackTLFrames: 0
+  TWhirl: {fileID: 0}
+  TWhirlFrames: 0
   ActiveAnimation: 8
   ActiveTexture: {fileID: 0}
   ActiveTextureFrames: 1
@@ -213,7 +215,13 @@ MonoBehaviour:
   walkSpeed: 0
   dodgeChance: 0
   skinThickness: 0
-  hitPoints: 100
+  chainLightning: 0
+  trap: 0
+  magnet: 0
+  whirlwind: 0
+  hitPoints: 20
+  IsWhirlwindEnabled: 0
+  WhirlWindEndTime: 0
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

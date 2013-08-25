@@ -62,7 +62,7 @@ public class Player : MonoBehaviour
                     Enemy enemy = go.GetComponent<Enemy>();
                     if( enemy != null )
                     {
-                        int dmg = gameUnit.combinedStrength;
+                        int dmg = Mathf.Max(1,gameUnit.combinedStrength);
                         Vector3 directionToEnemy = Vector3.Normalize( enemy.transform.GetChild( 0 ).position - transform.GetChild( 0 ).position );
                         enemy.GetComponent<GameUnit>().ReceiveDamage( dmg );
                         enemy.rigidbody.AddForce( directionToEnemy * 2500f );
