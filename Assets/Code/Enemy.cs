@@ -18,7 +18,9 @@ public class Enemy : MonoBehaviour {
     
     void OnDestroy()
     {
-        dropStuff();
+        if(!Game.isShuttingDown) {
+            dropStuff();
+        }
     }
     
     void dropStuff()
