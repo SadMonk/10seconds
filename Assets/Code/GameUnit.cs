@@ -119,7 +119,6 @@ public class GameUnit : MonoBehaviour
 
     public void ReceiveDamage( int damage )
     {
-        Debug.Log( this + " has received " + damage + " damage." );
         hitPoints -= damage;
         if( hitPoints <= 0 )
         {
