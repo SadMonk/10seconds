@@ -30,7 +30,7 @@ GameObject:
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400006}
   m_Layer: 0
-  m_Name: DodgeSpeedDropPrefab 3
+  m_Name: DodgeDropPrefab
   m_TagString: Drop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

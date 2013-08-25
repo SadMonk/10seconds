@@ -30,7 +30,7 @@ GameObject:
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400006}
   m_Layer: 0
-  m_Name: WalkingSpeedDropPrefab 2
+  m_Name: SkinThicknessDropPrefab
   m_TagString: Drop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -151,9 +151,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bonusStrength: 0
   bonusAttackSpeed: 0
-  bonusWalkSpeed: 1
+  bonusWalkSpeed: 0
   bonusDodgeChance: 0
-  bonusSkinThickness: 0
+  bonusSkinThickness: 1
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
