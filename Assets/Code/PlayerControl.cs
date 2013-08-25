@@ -41,12 +41,19 @@ public class PlayerControl : MonoBehaviour
             else
                 sprite.UseWalkAnimation( 0.1f, Direction.BR );
         }
-        else
+        else if( x < 0 )
         {
             if( y > 0 )
                 sprite.UseWalkAnimation( 0.1f, Direction.TL );
             else
                 sprite.UseWalkAnimation( 0.1f, Direction.BL );
+        }
+        else
+        {
+            if( force == Vector3.zero )
+                sprite.UseStandAnimation( 0.1f );
+            else
+                sprite.UseWalkAnimation( 0.1f, sprite.lastDirection );
         }
 
         if( Input.GetButton( "Fire1" ) )

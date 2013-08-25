@@ -65,7 +65,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e534324c8ec6064da3927c78ccf5999, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Size: .00499999989
+  Size: .00999999978
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
