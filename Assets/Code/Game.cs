@@ -15,7 +15,7 @@ public class Game : MonoBehaviour
     GameObject PlayerPrefab;
     GameObject EnemyPrefab1;
     GameObject EnemyPrefab2;
-	GameObject DropPrefab;
+	GameObject StrengthDropPrefab;
     GameObject DamageTextPrefab;
 
     CameraComponent camera;
@@ -24,6 +24,8 @@ public class Game : MonoBehaviour
     public float SpawnRate = 4f;
  
     public static bool isShuttingDown = false;
+    
+    public int KillCount = 0;
 
     void OnApplicationQuit()
     {
@@ -36,7 +38,7 @@ public class Game : MonoBehaviour
         PlayerPrefab = (GameObject)Resources.Load( "Prefab/PlayerPrefab", typeof( GameObject ) );
         EnemyPrefab1 = (GameObject)Resources.Load( "Prefab/Enemy1", typeof( GameObject ) );
         EnemyPrefab2 = (GameObject)Resources.Load( "Prefab/Enemy2", typeof( GameObject ) );
-		DropPrefab = (GameObject)Resources.Load( "Prefab/DropPrefab" , typeof( GameObject) );
+		StrengthDropPrefab = (GameObject)Resources.Load( "Prefab/StrengthDropPrefab" , typeof( GameObject) );
         DamageTextPrefab = (GameObject)Resources.Load( "Prefab/DamageText", typeof( GameObject ) );
     }
 
@@ -79,9 +81,7 @@ public class Game : MonoBehaviour
         player = SpawnPlayer( Vector3.zero );
         enemies.Add( SpawnEnemy( EnemyPrefab1, new Vector3( -5, 0, 0 ) ) );
         enemies.Add( SpawnEnemy( EnemyPrefab2, new Vector3( 5, 0, 0 ) ) );
-		Drop testDrop = SpawnDrop( new Vector3( 5, 0, 0 ) , DropPrefab );
-		testDrop.buff=new Buff();
-		testDrop.buff.bonusWalkSpeed=10;		
+		Drop testDrop = SpawnDrop( new Vector3( 5, 0, 0 ) , StrengthDropPrefab );				
 		drops.Add( testDrop );
 		Debug.Log("game initialized");
 	}
