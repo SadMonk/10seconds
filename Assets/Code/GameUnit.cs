@@ -30,7 +30,7 @@ public class GameUnit : MonoBehaviour
 
     public int hitPoints = 100;
 
-    public int combinedStrength { get { return baseStrength + strength; } }
+    public int combinedStrength { get { return baseStrength + strength*5; } }
     public float combinedAttackSpeed { get { return (float)( baseAttackSpeed + attackSpeed ) * 0.25f; } }
     public float combinedWalkSpeed { get { return (float)( baseWalkSpeed + walkSpeed ); } }
 
