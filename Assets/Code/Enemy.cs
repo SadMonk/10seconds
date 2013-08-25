@@ -19,10 +19,10 @@ public class Enemy : MonoBehaviour {
     void OnDisable()
     {
         if( !gameObject.activeInHierarchy )
-            dropBuff();
+            dropStuff();
     }
     
-    void dropBuff()
+    void dropStuff()
     {
         // initialize base buff values
         int bonusStrength = 0;
@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour {
         int bonusSkinThickness = 0;
         
         int buffType = Random.Range(0,4); // we want a number between 0 and 4 
-        Buff buff;
+        
         
         
         switch(buffType) 
