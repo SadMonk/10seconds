@@ -12,15 +12,10 @@ public class Buff
     public int bonusSkinThickness = 0;
           
     public int chainLightning = 0;
-    public int flameThrower = 0;
-    public int explosion = 0;
-    public int spikes = 0;
-    public int chainsaw = 0;
+    public int trap = 0;
     
     public int magnet = 0;
-    public int whirlwind = 0;
-    public int bonusVsOrcs = 0;
-    public int bonusVsGoblins = 0;   
+    public int whirlwind = 0; 
      
     public float EndTime;
 }
@@ -40,15 +35,10 @@ public class GameUnit : MonoBehaviour
     public int skinThickness = 0;    
       
     public int chainLightning = 0;
-    public int flameThrower = 0;
-    public int explosion = 0;
-    public int spikes = 0;
-    public int chainsaw = 0;
+    public int trap = 0;
     
     public int magnet = 0;
-    public int whirlwind = 0;
-    public int bonusVsOrcs = 0;
-    public int bonusVsGoblins = 0;   
+    public int whirlwind = 0;  
      
 
     public int hitPoints = 100;
@@ -81,15 +71,10 @@ public class GameUnit : MonoBehaviour
         skinThickness -= buff.bonusSkinThickness;
         
         chainLightning -= buff.chainLightning;
-        flameThrower -= buff.flameThrower;
-        explosion -= buff.explosion;
-        spikes -= buff.spikes;
-        chainsaw -= buff.chainsaw;
+        trap -= buff.trap;
         
         magnet -= buff.magnet;
         whirlwind -= buff.whirlwind;
-        bonusVsOrcs -= buff.bonusVsOrcs;
-        bonusVsGoblins -= buff.bonusVsGoblins;
         
         UpdateBuffs();
     }
@@ -103,15 +88,10 @@ public class GameUnit : MonoBehaviour
         skinThickness += buff.bonusSkinThickness;
   
         chainLightning += buff.chainLightning;
-        flameThrower += buff.flameThrower;
-        explosion += buff.explosion;
-        spikes += buff.spikes;
-        chainsaw += buff.chainsaw;
+        trap += buff.trap;
         
         magnet += buff.magnet;
         whirlwind += buff.whirlwind;
-        bonusVsOrcs += buff.bonusVsOrcs;
-        bonusVsGoblins += buff.bonusVsGoblins;
         
         buff.EndTime = Time.time + 10f;
         buffs.Enqueue( buff );

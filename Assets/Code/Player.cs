@@ -106,15 +106,10 @@ public class Player : MonoBehaviour
                     buff.bonusWalkSpeed = drop.bonusWalkSpeed;
                     
                     buff.chainLightning = drop.chainLightning;
-                    buff.flameThrower = drop.flameThrower;
-                    buff.explosion = drop.explosion;
-                    buff.spikes = drop.spikes;
-                    buff.chainsaw = drop.chainsaw;
+                    buff.trap = drop.trap;
                     
                     buff.magnet = drop.magnet;
-                    buff.whirlwind = drop.whirlwind;
-                    buff.bonusVsOrcs = drop.bonusVsOrcs;
-                    buff.bonusVsGoblins = drop.bonusVsGoblins;                    
+                    buff.whirlwind = drop.whirlwind;                   
                     
 					this.PickUpBuff(buff);					
                     Destroy(go);

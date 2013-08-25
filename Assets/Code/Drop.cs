@@ -10,14 +10,9 @@ public class Drop : MonoBehaviour {
     public int bonusSkinThickness = 0;
     
     public int chainLightning = 0;
-    public int flameThrower = 0;
-    public int explosion = 0;
-    public int spikes = 0;
-    public int chainsaw = 0;
+    public int trap = 0;
     
     public int magnet = 0;
     public int whirlwind = 0;
-    public int bonusVsOrcs = 0;
-    public int bonusVsGoblins = 0;	
 		
 }
