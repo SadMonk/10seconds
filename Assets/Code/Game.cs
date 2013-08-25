@@ -21,7 +21,8 @@ public class Game : MonoBehaviour
     CameraComponent camera;
 
     public float LastSpawnTime = 0f;
-    public float SpawnRate = 4f;
+    public float SpawnRate = 10f;
+    public int SpawnAmount = 2;
  
     public static bool isShuttingDown = false;
     
@@ -79,8 +80,6 @@ public class Game : MonoBehaviour
         LoadSpawners();
         camera = (CameraComponent)FindObjectOfType( typeof( CameraComponent ) );
         player = SpawnPlayer( Vector3.zero );
-        enemies.Add( SpawnEnemy( EnemyPrefab1, new Vector3( -5, 0, 0 ) ) );
-        enemies.Add( SpawnEnemy( EnemyPrefab2, new Vector3( 5, 0, 0 ) ) );
 		Drop testDrop = SpawnDrop( new Vector3( 5, 0, 0 ) , StrengthDropPrefab );				
 		drops.Add( testDrop );
 		Debug.Log("game initialized");
@@ -104,12 +103,21 @@ public class Game : MonoBehaviour
     {
         if( LastSpawnTime + SpawnRate < Time.time )
         {
-            var randomSpawner = spawners[Random.Range( 0, spawners.Count )];
-            switch( Random.Range( 0, 2 ) )
+            for( int i = 0; i < SpawnAmount; i++ )
             {
-                case 0: enemies.Add( SpawnEnemy( EnemyPrefab1, randomSpawner.transform.position ) ); break;
-                case 1: enemies.Add( SpawnEnemy( EnemyPrefab2, randomSpawner.transform.position ) ); break;
+                var randomSpawner = spawners[Random.Range( 0, spawners.Count )];
+                if( Random.Range( 0, 1000 ) <= 66 )
+                    enemies.Add( SpawnEnemy( EnemyPrefab2, randomSpawner.transform.position ) );
+                else
+                    enemies.Add( SpawnEnemy( EnemyPrefab1, randomSpawner.transform.position ) );
             }
+
+            if( SpawnAmount < 10 )
+                SpawnAmount += 1;
+            else if( SpawnAmount < 20 )
+                SpawnAmount += 2;
+            else if( SpawnAmount < 100 )
+                SpawnAmount += 3;
 
             LastSpawnTime = Time.time;
         }

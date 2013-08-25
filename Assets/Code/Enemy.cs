@@ -2,107 +2,112 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class Enemy : MonoBehaviour {
+public class Enemy : MonoBehaviour
+{
 
     public GameUnit gameUnit;
 
     float lastAttackTime;
 
-	// Use this for initialization
-	void Awake () {
+    // Use this for initialization
+    void Awake()
+    {
         gameUnit = GetComponent<GameUnit>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-    
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
     void OnDestroy()
     {
-        if(!Game.isShuttingDown) {
+        if( !Game.isShuttingDown )
+        {
             Game.Instance.KillCount++;
-            dropStuff();            
+            dropStuff();
         }
     }
-    
+
     void dropStuff()
     {
-        int buffType = Random.Range(0,21); // we want a number between 0 and 4 
-        
+        BuffTypes buffType = (BuffTypes)Random.Range( 0, System.Enum.GetValues( typeof( BuffTypes ) ).Length ); // we want a number between 0 and 4 
+
         GameObject drop = null;
-        
-        
-        switch(buffType) 
+
+
+        switch( buffType )
         {
-            case (int)BuffTypes.Strength:
-                drop = (GameObject)Resources.Load( "Prefab/StrengthDropPrefab", typeof( GameObject ) );                
+            case BuffTypes.Strength:
+                drop = (GameObject)Resources.Load( "Prefab/StrengthDropPrefab", typeof( GameObject ) );
                 break;
-            case (int)BuffTypes.AttackSpeed:
+            case BuffTypes.AttackSpeed:
                 drop = (GameObject)Resources.Load( "Prefab/AttackSpeedDropPrefab", typeof( GameObject ) );
                 break;
-            case (int)BuffTypes.WalkingSpeed:
+            case BuffTypes.WalkingSpeed:
                 drop = (GameObject)Resources.Load( "Prefab/WalkinSpeedDropPrefab", typeof( GameObject ) );
                 break;
-            case (int)BuffTypes.Dodge:
+            case BuffTypes.Dodge:
                 drop = (GameObject)Resources.Load( "Prefab/DodgeDropPrefab", typeof( GameObject ) );
                 break;
-            case (int)BuffTypes.SkinThickness:
+            case BuffTypes.SkinThickness:
                 drop = (GameObject)Resources.Load( "Prefab/SkinThicknessDropPrefab", typeof( GameObject ) );
                 break;
-            
-            case (int)BuffTypes.ChainLightning:
+
+            case BuffTypes.ChainLightning:
                 drop = (GameObject)Resources.Load( "Prefab/ChainLightningDropPrefab", typeof( GameObject ) );
                 break;
-            case (int)BuffTypes.FlameThrower:
+            case BuffTypes.FlameThrower:
                 drop = (GameObject)Resources.Load( "Prefab/FlameThrowerDropPrefab", typeof( GameObject ) );
                 break;
-            case (int)BuffTypes.Explosion:
+            case BuffTypes.Explosion:
                 drop = (GameObject)Resources.Load( "Prefab/ExplosionDropPrefab", typeof( GameObject ) );
                 break;
-            case (int)BuffTypes.Spikes:
+            case BuffTypes.Spikes:
                 drop = (GameObject)Resources.Load( "Prefab/SpikesDropPrefab", typeof( GameObject ) );
                 break;
-            case (int)BuffTypes.Chainsaw:
+            case BuffTypes.Chainsaw:
                 drop = (GameObject)Resources.Load( "Prefab/ChainsawDropPrefab", typeof( GameObject ) );
                 break;
-            case (int)BuffTypes.Magnet:
+            case BuffTypes.Magnet:
                 drop = (GameObject)Resources.Load( "Prefab/MagnetDropPrefab", typeof( GameObject ) );
                 break;
-            case (int)BuffTypes.Whirlwind:
+            case BuffTypes.Whirlwind:
                 drop = (GameObject)Resources.Load( "Prefab/WhirlwindDropPrefab", typeof( GameObject ) );
                 break;
-            case (int)BuffTypes.BonusDmgVsOrcs:
+            case BuffTypes.BonusDmgVsOrcs:
                 drop = (GameObject)Resources.Load( "Prefab/BonusDmgVsOrcsDropPrefab", typeof( GameObject ) );
                 break;
-            case (int)BuffTypes.BonusDmgVsGoblins:
+            case BuffTypes.BonusDmgVsGoblins:
                 drop = (GameObject)Resources.Load( "Prefab/BonusDmgVsGoblinsDropPrefab", typeof( GameObject ) );
                 break;
-            case (int)BuffTypes.NegativeStrength:
+            case BuffTypes.NegativeStrength:
                 drop = (GameObject)Resources.Load( "Prefab/NegativeStrengthDropPrefab", typeof( GameObject ) );
                 break;
-            case (int)BuffTypes.NegativeAttackSpeed:
+            case BuffTypes.NegativeAttackSpeed:
                 drop = (GameObject)Resources.Load( "Prefab/NegativeAttackSpeedDropPrefab", typeof( GameObject ) );
                 break;
-            case (int)BuffTypes.NegativeWalkSpeed:
+            case BuffTypes.NegativeWalkSpeed:
                 drop = (GameObject)Resources.Load( "Prefab/NegativeWalkSpeedDropPrefab", typeof( GameObject ) );
                 break;
-            case (int)BuffTypes.NegativeDodge:
+            case BuffTypes.NegativeDodge:
                 drop = (GameObject)Resources.Load( "Prefab/NegativeDodgeDropPrefab", typeof( GameObject ) );
                 break;
-            case (int)BuffTypes.NegativeSkinThickness:
+            case BuffTypes.NegativeSkinThickness:
                 drop = (GameObject)Resources.Load( "Prefab/NegativeSkinThicknessDropPrefab", typeof( GameObject ) );
                 break;
-            case (int)BuffTypes.NegativeBomb:
+            case BuffTypes.NegativeBomb:
                 drop = (GameObject)Resources.Load( "Prefab/NegativeBombDropPrefab", typeof( GameObject ) );
                 break;
-            
+
             default:
-                Debug.Log("Default case.. dafuq??");
+                Debug.Log( "Default case.. dafuq??" );
                 break;
         }
-        if(drop != null) {
-            dropBuff(drop);
+        if( drop != null )
+        {
+            dropBuff( drop );
         }
     }
 
@@ -120,8 +125,8 @@ public class Enemy : MonoBehaviour {
             {
                 int dmg = gameUnit.combinedStrength;
                 Game.Instance.player.GetComponent<GameUnit>().ReceiveDamage( dmg );
-                Game.Instance.DisplayText( Game.Instance.player.transform, new Vector2( 0, 1.95f ), new Vector3( 0, 2f ), gameUnit.combinedStrength.ToString(), Color.red );
-                Game.Instance.DisplayText( Game.Instance.player.transform, new Vector2( 0, 2f ), new Vector3( 0, 2f ), gameUnit.combinedStrength.ToString(), Color.black );
+                Game.Instance.DisplayText( Game.Instance.player.transform, new Vector2( 0, 1.95f ), new Vector2( 0, 2f ), gameUnit.combinedStrength.ToString(), Color.red );
+                Game.Instance.DisplayText( Game.Instance.player.transform, new Vector2( 0, 2f ), new Vector2( 0, 2f ), gameUnit.combinedStrength.ToString(), Color.black );
                 lastAttackTime = Time.time;
             }
         }
