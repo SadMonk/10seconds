@@ -90,7 +90,13 @@ public class Player : MonoBehaviour
                 Drop drop = go.GetComponent<Drop>();
                 if( drop != null )
                 {
-					this.PickUpBuff(drop.buff);					
+                    Buff buff = new Buff();
+                    buff.bonusAttackSpeed = drop.bonusAttackSpeed;
+                    buff.bonusDodgeChance = drop.bonusDodgeChance;
+                    buff.bonusSkinThickness = drop.bonusSkinThickness;
+                    buff.bonusStrength = drop.bonusStrength;
+                    buff.bonusWalkSpeed = drop.bonusWalkSpeed;
+					this.PickUpBuff(buff);					
                     Destroy(go);
                 }
             }
