@@ -253,6 +253,7 @@ MonoBehaviour:
   magnetIcon: {fileID: 2800000, guid: c334ed1770315ff4cb18a22c8f29c8f2, type: 3}
   whirlwindIcon: {fileID: 2800000, guid: ed46aff73af3fd64bac3f3d45e75c373, type: 3}
   trapIcon: {fileID: 2800000, guid: 530d877550d794046937b3d3a22b802f, type: 3}
+  bombIcon: {fileID: 2800000, guid: e0ea1a6e8fbe64741b763f0f62f39242, type: 3}
   height: 25
 --- !u!114 &11400008
 MonoBehaviour:
@@ -327,6 +328,7 @@ MonoBehaviour:
   magnet: 0
   whirlwind: 0
   trap: 0
+  bomb: 0
   hitPoints: 100
   IsWhirlwindEnabled: 0
   WhirlWindEndTime: 0

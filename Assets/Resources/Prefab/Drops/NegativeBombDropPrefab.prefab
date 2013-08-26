@@ -126,6 +126,7 @@ MonoBehaviour:
   magnet: 0
   whirlwind: 0
   trap: 0
+  bomb: 1
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -15,7 +15,7 @@ public class Game : MonoBehaviour
     public GameObject PlayerPrefab;
     public GameObject EnemyPrefab1;
     public GameObject EnemyPrefab2;
-	public GameObject StrengthDropPrefab;
+	public GameObject spawnDropPrefab;
     public GameObject DamageTextPrefab;
 
     CameraComponent gameCamera;
@@ -71,7 +71,7 @@ public class Game : MonoBehaviour
         LoadSpawners();
         gameCamera = (CameraComponent)FindObjectOfType( typeof( CameraComponent ) );
         player = SpawnPlayer( Vector3.zero );
-		Drop testDrop = SpawnDrop( new Vector3( 5, 0, 0 ) , StrengthDropPrefab );				
+		Drop testDrop = SpawnDrop( new Vector3( 5, 0, 0 ) , spawnDropPrefab );				
 		drops.Add( testDrop );
 		Debug.Log("game initialized");
 	}

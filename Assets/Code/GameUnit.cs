@@ -16,6 +16,8 @@ public class Buff
     public int magnet = 0;
     public int whirlwind = 0; 
     public int trap = 0;
+    
+    public int bomb= 0;
      
     public float EndTime;
 }
@@ -38,6 +40,8 @@ public class GameUnit : MonoBehaviour
     public int magnet = 0;
     public int whirlwind = 0; 
     public int trap = 0; 
+    
+    public int bomb = 0;
      
 
     public int hitPoints = 100;
@@ -82,6 +86,8 @@ public class GameUnit : MonoBehaviour
         
         trap -= buff.trap;
         
+        bomb -= buff.bomb;
+        
         UpdateBuffs();
     }
 
@@ -98,6 +104,8 @@ public class GameUnit : MonoBehaviour
         magnet += buff.magnet;
         whirlwind += buff.whirlwind;
         trap += buff.trap;
+        
+        bomb += buff.bomb;
         
         buff.EndTime = Time.time + 10f;
         if( !(buff.whirlwind > 0 || buff.magnet > 0) ) {

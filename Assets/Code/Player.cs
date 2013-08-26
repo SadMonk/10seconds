@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     public GameUnit gameUnit;
 
     float lastAttackTime = 0f;
+    
+    float lastBombHurtTime = 0f;
 
     /// <summary>
     /// Picks up buff.
@@ -31,6 +33,7 @@ public class Player : MonoBehaviour
     void Update()
     {
 		CheckForDrop();	
+        CheckForBombHurt();
     }
 
     public bool Attack( Direction direction )
@@ -117,7 +120,9 @@ public class Player : MonoBehaviour
                     buff.trap = drop.trap;
                     
                     buff.magnet = drop.magnet;
-                    buff.whirlwind = drop.whirlwind;                   
+                    buff.whirlwind = drop.whirlwind;  
+                    
+                    buff.bomb = drop.bomb;
                     
 					this.PickUpBuff(buff);					
                     Destroy(go);
@@ -132,6 +137,18 @@ public class Player : MonoBehaviour
         if( !Game.isShuttingDown )
         {
             Application.LoadLevel( "GameOver" );
+        }
+    }
+    
+    void CheckForBombHurt() 
+    {
+        float currentSecond = Mathf.Ceil(Time.time);
+        if(currentSecond > lastBombHurtTime) {
+            lastBombHurtTime = currentSecond;
+            if(gameUnit.bomb > 0)
+            {
+                gameUnit.ReceiveDamage(gameUnit.bomb);
+            }
         }
     }
 }

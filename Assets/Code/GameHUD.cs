@@ -14,6 +14,7 @@ public class GameHUD : MonoBehaviour {
     public Texture2D magnetIcon;
     public Texture2D whirlwindIcon;
     public Texture2D trapIcon;
+    public Texture2D bombIcon;
     
     public float height = 25f;
     
@@ -36,6 +37,7 @@ public class GameHUD : MonoBehaviour {
         ShowStat(magnetIcon,Game.Instance.player.gameUnit.magnet);
         ShowStat(whirlwindIcon,Game.Instance.player.gameUnit.whirlwind);
         ShowStat(trapIcon,Game.Instance.player.gameUnit.trap);
+        ShowStat(bombIcon,Game.Instance.player.gameUnit.bomb);
         
         
         GUILayout.EndHorizontal();

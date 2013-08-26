@@ -122,10 +122,11 @@ MonoBehaviour:
   bonusWalkSpeed: 0
   bonusSkinThickness: 0
   chainLightning: 0
-  spikes: 0
+  spikes: 1
   magnet: 0
   whirlwind: 0
   trap: 0
+  bomb: 0
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
