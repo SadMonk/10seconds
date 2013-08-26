@@ -30,7 +30,7 @@ GameObject:
   - 114: {fileID: 11400006}
   - 114: {fileID: 11400004}
   m_Layer: 0
-  m_Name: WhirlwindDropPrefab
+  m_Name: NegativeStrengthDropPrefab
   m_TagString: Drop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55,7 +55,7 @@ Transform:
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.70000005, y: 1.82000005, z: 1}
+  m_LocalScale: {x: 1.30999994, y: 1.58000004, z: 1}
   m_Children:
   - {fileID: 400000}
   m_Father: {fileID: 0}
@@ -71,7 +71,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 0d9f2109466ac044eb00e443422612e2, type: 2}
+  - {fileID: 2100000, guid: e06c0bd304af53140b6c04ff5f719983, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -117,14 +117,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dea4e5c1bd701d4a99b59ab6e435ff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bonusStrength: 0
+  bonusStrength: -1
   bonusAttackSpeed: 0
   bonusWalkSpeed: 0
   bonusSkinThickness: 0
   chainLightning: 0
   trap: 0
   magnet: 0
-  whirlwind: 1
+  whirlwind: 0
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -132,7 +132,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_Material: {fileID: 13400000, guid: 7efe55d8ea9e9b6428c9aaa239c60f0c, type: 2}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: .200000003

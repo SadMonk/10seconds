@@ -12,11 +12,11 @@ public class Game : MonoBehaviour
 	List<Buff> buffs;
 	public List<Drop> drops;
 
-    GameObject PlayerPrefab;
-    GameObject EnemyPrefab1;
-    GameObject EnemyPrefab2;
-	GameObject StrengthDropPrefab;
-    GameObject DamageTextPrefab;
+    public GameObject PlayerPrefab;
+    public GameObject EnemyPrefab1;
+    public GameObject EnemyPrefab2;
+	public GameObject StrengthDropPrefab;
+    public GameObject DamageTextPrefab;
 
     CameraComponent camera;
 
@@ -32,16 +32,7 @@ public class Game : MonoBehaviour
     {
         isShuttingDown = true;
     }
-    
-    
-    void LoadPrefabs()
-    {
-        PlayerPrefab = (GameObject)Resources.Load( "Prefab/PlayerPrefab", typeof( GameObject ) );
-        EnemyPrefab1 = (GameObject)Resources.Load( "Prefab/Enemy1", typeof( GameObject ) );
-        EnemyPrefab2 = (GameObject)Resources.Load( "Prefab/Enemy2", typeof( GameObject ) );
-		StrengthDropPrefab = (GameObject)Resources.Load( "Prefab/StrengthDropPrefab" , typeof( GameObject) );
-        DamageTextPrefab = (GameObject)Resources.Load( "Prefab/DamageText", typeof( GameObject ) );
-    }
+      
 
     void LoadSpawners()
     {
@@ -76,7 +67,6 @@ public class Game : MonoBehaviour
 	// Use this for initialization
 	void Start () {
         Instance = this;
-        LoadPrefabs();
         LoadSpawners();
         camera = (CameraComponent)FindObjectOfType( typeof( CameraComponent ) );
         player = SpawnPlayer( Vector3.zero );

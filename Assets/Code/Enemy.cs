@@ -39,41 +39,41 @@ public class Enemy : MonoBehaviour
         switch( buffType )
         {
             case BuffTypes.Strength:
-                drop = (GameObject)Resources.Load( "Prefab/StrengthDropPrefab", typeof( GameObject ) );
+                drop = (GameObject)Resources.Load( "Prefab/Drops/StrengthDropPrefab", typeof( GameObject ) );
                 break;
             case BuffTypes.AttackSpeed:
-                drop = (GameObject)Resources.Load( "Prefab/AttackSpeedDropPrefab", typeof( GameObject ) );
+                drop = (GameObject)Resources.Load( "Prefab/Drops/AttackSpeedDropPrefab", typeof( GameObject ) );
                 break;
             case BuffTypes.WalkingSpeed:
-                drop = (GameObject)Resources.Load( "Prefab/WalkingSpeedDropPrefab", typeof( GameObject ) );
+                drop = (GameObject)Resources.Load( "Prefab/Drops/WalkingSpeedDropPrefab", typeof( GameObject ) );
                 break;
             case BuffTypes.SkinThickness:
-                drop = (GameObject)Resources.Load( "Prefab/SkinThicknessDropPrefab", typeof( GameObject ) );
+                drop = (GameObject)Resources.Load( "Prefab/Drops/SkinThicknessDropPrefab", typeof( GameObject ) );
                 break;
 
             case BuffTypes.ChainLightning:
-                drop = (GameObject)Resources.Load( "Prefab/ChainLightningDropPrefab", typeof( GameObject ) );
+                drop = (GameObject)Resources.Load( "Prefab/Drops/ChainLightningDropPrefab", typeof( GameObject ) );
                 break;
             case BuffTypes.Trap:
-                drop = (GameObject)Resources.Load( "Prefab/TrapDropPrefab", typeof( GameObject ) );
+                drop = (GameObject)Resources.Load( "Prefab/Drops/TrapDropPrefab", typeof( GameObject ) );
                 break;
             case BuffTypes.Spikes:
-                drop = (GameObject)Resources.Load( "Prefab/SpikesDropPrefab", typeof( GameObject ) );
+                drop = (GameObject)Resources.Load( "Prefab/Drops/SpikesDropPrefab", typeof( GameObject ) );
                 break;
             case BuffTypes.Magnet:
-                drop = (GameObject)Resources.Load( "Prefab/MagnetDropPrefab", typeof( GameObject ) );
+                drop = (GameObject)Resources.Load( "Prefab/Drops/MagnetDropPrefab", typeof( GameObject ) );
                 break;
             case BuffTypes.Whirlwind:
-                drop = (GameObject)Resources.Load( "Prefab/WhirlwindDropPrefab", typeof( GameObject ) );
+                drop = (GameObject)Resources.Load( "Prefab/Drops/WhirlwindDropPrefab", typeof( GameObject ) );
                 break;
             case BuffTypes.NegativeStrength:
-                drop = (GameObject)Resources.Load( "Prefab/NegativeStrengthDropPrefab", typeof( GameObject ) );
+                drop = (GameObject)Resources.Load( "Prefab/Drops/NegativeStrengthDropPrefab", typeof( GameObject ) );
                 break;
             case BuffTypes.NegativeWalkSpeed:
-                drop = (GameObject)Resources.Load( "Prefab/NegativeWalkSpeedDropPrefab", typeof( GameObject ) );
+                drop = (GameObject)Resources.Load( "Prefab/Drops/NegativeWalkSpeedDropPrefab", typeof( GameObject ) );
                 break;
             case BuffTypes.NegativeBomb:
-                drop = (GameObject)Resources.Load( "Prefab/NegativeBombDropPrefab", typeof( GameObject ) );
+                drop = (GameObject)Resources.Load( "Prefab/Drops/NegativeBombDropPrefab", typeof( GameObject ) );
                 break;
 
             default:
