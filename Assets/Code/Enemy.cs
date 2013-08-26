@@ -54,9 +54,6 @@ public class Enemy : MonoBehaviour
             case BuffTypes.ChainLightning:
                 drop = (GameObject)Resources.Load( "Prefab/Drops/ChainLightningDropPrefab", typeof( GameObject ) );
                 break;
-            case BuffTypes.Trap:
-                drop = (GameObject)Resources.Load( "Prefab/Drops/TrapDropPrefab", typeof( GameObject ) );
-                break;
             case BuffTypes.Spikes:
                 drop = (GameObject)Resources.Load( "Prefab/Drops/SpikesDropPrefab", typeof( GameObject ) );
                 break;
@@ -98,7 +95,14 @@ public class Enemy : MonoBehaviour
             if( Game.Instance.player != null )
             {
                 int dmg = gameUnit.combinedStrength;
-                Game.Instance.player.GetComponent<GameUnit>().ReceiveDamage( dmg );
+                GameUnit playerUnit = Game.Instance.player.GetComponent<GameUnit>();
+                int actualDamageDealt = playerUnit.ReceiveDamage( dmg );
+                if(playerUnit.spikes > 0) 
+                {
+                    int reflectedDamage = (int)Mathf.Round(Mathf.Max (1f, actualDamageDealt * playerUnit.spikes* 0.2f));
+                    gameUnit.ReceiveDamage(reflectedDamage);
+                }
+                
                 lastAttackTime = Time.time;
             }
         }

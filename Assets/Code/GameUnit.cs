@@ -80,8 +80,6 @@ public class GameUnit : MonoBehaviour
         chainLightning -= buff.chainLightning;
         spikes -= buff.spikes;
         
-        magnet -= buff.magnet;
-        whirlwind -= buff.whirlwind;
         trap -= buff.trap;
         
         UpdateBuffs();
@@ -102,8 +100,9 @@ public class GameUnit : MonoBehaviour
         trap += buff.trap;
         
         buff.EndTime = Time.time + 10f;
-        if( buff.whirlwind > 0 ) buff.EndTime += 10000000;
-        buffs.Enqueue( buff );
+        if( !(buff.whirlwind > 0 || buff.magnet > 0) ) {
+            buffs.Enqueue( buff );            
+        }
     }
  
     /// <summary>
