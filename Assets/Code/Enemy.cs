@@ -49,9 +49,6 @@ public class Enemy : MonoBehaviour
                 drop = (GameObject)Resources.Load( "Prefab/Drops/SkinThicknessDropPrefab", typeof( GameObject ) );
                 break;
 
-            case BuffTypes.ChainLightning:
-                drop = (GameObject)Resources.Load( "Prefab/Drops/ChainLightningDropPrefab", typeof( GameObject ) );
-                break;
             case BuffTypes.Spikes:
                 drop = (GameObject)Resources.Load( "Prefab/Drops/SpikesDropPrefab", typeof( GameObject ) );
                 break;
