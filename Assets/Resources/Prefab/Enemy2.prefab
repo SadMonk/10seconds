@@ -205,23 +205,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b2edf1fb926c8439b694840005b754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseStrength: 1
+  baseStrength: 5
   baseAttackSpeed: 3
   baseWalkSpeed: 75
-  baseDodgeChance: 0
   baseSkinThickness: 0
   strength: 0
   attackSpeed: 0
   walkSpeed: 0
-  dodgeChance: 0
   skinThickness: 0
   chainLightning: 0
-  trap: 0
+  spikes: 0
   magnet: 0
   whirlwind: 0
+  trap: 0
+  bomb: 0
   hitPoints: 50
   IsWhirlwindEnabled: 0
   WhirlWindEndTime: 0
+  useMagnet: 0
+  minimumWalkSpeed: 20
+  auraPrefab: {fileID: 0}
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
