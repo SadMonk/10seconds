@@ -83,7 +83,7 @@ public static partial class IO
         {
             fs = new FileStream( path, FileMode.Create );
         }
-        catch( System.Exception ex )
+        catch( System.Exception )
         {
 
         }
@@ -106,9 +106,9 @@ public static partial class IO
         {
             fs = new FileStream( path, FileMode.Open );
         }
-        catch (System.Exception ex)
+        catch( System.Exception )
         {
-        	
+
         }
         finally
         {
