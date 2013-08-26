@@ -27,7 +27,10 @@ public class Game : MonoBehaviour
     public static bool isShuttingDown = false;
     
     public static int KillCount = 0;
-
+    public static int SkillLife = 0;
+    public static int SkillDamage = 0;
+    public static int SkillRegen = 0;
+    
     void OnApplicationQuit()
     {
         isShuttingDown = true;

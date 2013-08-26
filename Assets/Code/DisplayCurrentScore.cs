@@ -1,12 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent( typeof( GUIText ) )]
 public class DisplayCurrentScore : MonoBehaviour
 {
+    TextMesh textMesh;
+
+    void Awake()
+    {
+        textMesh = GetComponent<TextMesh>();
+    }
+
     // Use this for initialization
     void Start()
     {
-        guiText.text = Game.KillCount.ToString();
+        if( guiText != null )
+            guiText.text = Game.KillCount.ToString();
+    }
+
+    void Update()
+    {
+        if( textMesh != null )
+            textMesh.text = "Kills: " + Game.KillCount.ToString();
     }
 }
