@@ -11,6 +11,7 @@ GameObject:
   - 23: {fileID: 2300000}
   - 114: {fileID: 11400000}
   - 33: {fileID: 3300000}
+  - 114: {fileID: 11400002}
   m_Layer: 0
   m_Name: Aura
   m_TagString: Untagged
@@ -66,6 +67,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Size: .00999999978
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12e342c8577319d478a77824e0eb3d69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Offset: {x: 0, y: -2.44876289, z: 9.99999975e-05}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

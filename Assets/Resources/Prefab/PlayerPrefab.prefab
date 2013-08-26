@@ -335,6 +335,7 @@ MonoBehaviour:
   WhirlWindEndTime: 0
   useMagnet: 0
   minimumWalkSpeed: 20
+  auraPrefab: {fileID: 100000, guid: 62270c2529b2d2040851a1c1163352a9, type: 2}
 --- !u!114 &11400018
 MonoBehaviour:
   m_ObjectHideFlags: 1

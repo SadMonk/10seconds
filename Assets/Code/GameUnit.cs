@@ -60,6 +60,8 @@ public class GameUnit : MonoBehaviour
     
     public int minimumWalkSpeed = 20;
 
+    public GameObject auraPrefab;
+
 	// Update is called once per frame
 	void Update ()
     {
@@ -106,6 +108,12 @@ public class GameUnit : MonoBehaviour
         trap += buff.trap;
         
         bomb += buff.bomb;
+
+        if(buff.spikes > 0)
+        {
+            GameObject auraGO = (GameObject)Instantiate( auraPrefab );
+            auraGO.GetComponent<Aura>().followTarget = gameObject;
+        }
         
         buff.EndTime = Time.time + 10f;
         if( !(buff.whirlwind > 0 || buff.magnet > 0) ) {
