@@ -28,7 +28,7 @@ public struct HighScore
 
     public static int Compare( HighScore left, HighScore right )
     {
-        return left.Score.CompareTo( right.Score );
+        return right.Score.CompareTo( left.Score );
     }
 }
 

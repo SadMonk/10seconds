@@ -13,7 +13,14 @@ public class SceneChanger : MonoBehaviour {
 	// Update is called once per frame
 	void OnMouseDown ()
     {
-        Debug.Log( "Switching scene" );
-        Application.LoadLevel( SceneName );
+        if( SceneName == "Exit" )
+        {
+            Application.Quit();
+        }
+        else
+        {
+            Debug.Log( "Switching scene" );
+            Application.LoadLevel( SceneName );
+        }
 	}
 }
