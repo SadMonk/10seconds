@@ -123,13 +123,10 @@ public class Player : MonoBehaviour
                     buff.bonusSkinThickness = drop.bonusSkinThickness;
                     buff.bonusStrength = drop.bonusStrength;
                     buff.bonusWalkSpeed = drop.bonusWalkSpeed;
-                    
-                    buff.chainLightning = drop.chainLightning;
-                    buff.trap = drop.trap;
-                    
+                                       
                     buff.magnet = drop.magnet;
                     buff.whirlwind = drop.whirlwind;  
-                    
+                    buff.spikes = drop.spikes;
                     buff.bomb = drop.bomb;
                     
 					this.PickUpBuff(buff);					
