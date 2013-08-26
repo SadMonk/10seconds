@@ -42,7 +42,7 @@ public class GameUnit : MonoBehaviour
 
     public int combinedStrength { get { return baseStrength + strength*5; } }
     public float combinedAttackSpeed { get { return (float)( baseAttackSpeed + attackSpeed ) * 0.25f; } }
-    public float combinedWalkSpeed { get { return (float)( Mathf.Max((float)(baseWalkSpeed + baseWalkSpeed * walkSpeed * 1.4f) , (float) minimumWalkSpeed) ); } }
+    public float combinedWalkSpeed { get { return (float)( Mathf.Max((float)(baseWalkSpeed + baseWalkSpeed * walkSpeed * 0.4f) , (float) minimumWalkSpeed) ); } }
     public float combinedSkinThickness {get {return (float)( baseSkinThickness + skinThickness*0.05f);}}
 
     Queue<Buff> buffs = new Queue<Buff>();
