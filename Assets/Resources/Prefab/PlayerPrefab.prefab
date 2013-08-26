@@ -243,16 +243,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5b673a034e67b64794c61f11709fdae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthIcon: {fileID: 2800000, guid: f53ecd81d60d02545b05cef356a359a2, type: 3}
+  healthIcon: {fileID: 2800000, guid: 91c6f816778b2694dbdd4a6c70a60d2b, type: 3}
   strengthIcon: {fileID: 2800000, guid: b3cc4821cfea3414ab57ceae8581d5d5, type: 3}
   attackSpeedIcon: {fileID: 2800000, guid: 96d0f232a6ecf6a4c9c649f0b66a6c7b, type: 3}
   walkingSpeedIcon: {fileID: 2800000, guid: c2f7928df487b2444b6c171bc3aed2ae, type: 3}
   skinThicknessIcon: {fileID: 2800000, guid: 689cc1694c0a59d45afc328d24f4cf11, type: 3}
   chainLightningIcon: {fileID: 2800000, guid: d021b3a4cbfadb1498b8853c8b49c498, type: 3}
-  spikesIcon: {fileID: 2800000, guid: f53ecd81d60d02545b05cef356a359a2, type: 3}
+  spikesIcon: {fileID: 2800000, guid: bfbe839b02cdb224b871be5a7386d5e0, type: 3}
   magnetIcon: {fileID: 2800000, guid: c334ed1770315ff4cb18a22c8f29c8f2, type: 3}
   whirlwindIcon: {fileID: 2800000, guid: ed46aff73af3fd64bac3f3d45e75c373, type: 3}
-  trapIcon: {fileID: 2800000, guid: f53ecd81d60d02545b05cef356a359a2, type: 3}
+  trapIcon: {fileID: 2800000, guid: 530d877550d794046937b3d3a22b802f, type: 3}
   height: 25
 --- !u!114 &11400008
 MonoBehaviour:
