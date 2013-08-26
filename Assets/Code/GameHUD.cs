@@ -13,12 +13,23 @@ public class GameHUD : MonoBehaviour {
     public Texture2D whirlwindIcon;
     public Texture2D trapIcon;
     
+    
+    
 	void OnGUI() 
     {
-        GUILayout.BeginArea(new Rect(0,0,Screen.width,50));
+        int currentScore = Game.Instance.KillCount;
         
-        GUILayout.Label("Score:");
+        GUILayout.BeginHorizontal("box");
         
-        GUILayout.EndArea();
+        GUILayout.Label("Banished:");
+        GUILayout.Label(currentScore.ToString());
+        
+        GUILayout.EndHorizontal();
     }
+    
+    
+    void OnUpdate()
+    {
+    }
+    
 }
