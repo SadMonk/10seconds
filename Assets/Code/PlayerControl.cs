@@ -100,5 +100,14 @@ public class PlayerControl : MonoBehaviour
                 gameUnit.whirlwind--;
             //}
         }
+        
+        if ( Input.GetButtonDown( "Jump" ) )
+        {
+            if(gameUnit.magnet > 0) 
+            {
+                gameUnit.useMagnet = true;
+                gameUnit.magnet--;
+            }
+        }
     }
 }

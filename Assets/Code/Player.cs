@@ -31,7 +31,6 @@ public class Player : MonoBehaviour
     void Update()
     {
 		CheckForDrop();	
-		UpdateStats();
     }
 
     public bool Attack( Direction direction )
@@ -92,6 +91,11 @@ public class Player : MonoBehaviour
 	{		
 		Vector3 hitLocation = transform.GetChild( 0 ).position;
 		float radius = 2f;
+        if(gameUnit.useMagnet) 
+        {
+            radius = 12f;
+            gameUnit.useMagnet = false;
+        }
 		var colliders = Physics.OverlapSphere( hitLocation, radius );
 		
         foreach( var collider in colliders )
@@ -122,10 +126,6 @@ public class Player : MonoBehaviour
         }
 	}
 	
-	private void UpdateStats()
-	{
-		// update speed here :3
-	}
 
     void OnDestroy()
     {

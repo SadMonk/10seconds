@@ -52,6 +52,7 @@ public class GameUnit : MonoBehaviour
     // active buff states
     public bool IsWhirlwindEnabled = false;
     public float WhirlWindEndTime = 0f;
+    public bool useMagnet = false;
     
     public int minimumWalkSpeed = 20;
 
