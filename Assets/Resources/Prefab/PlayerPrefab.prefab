@@ -17,6 +17,7 @@ GameObject:
   - 114: {fileID: 11400016}
   - 114: {fileID: 11400002}
   - 82: {fileID: 8200000}
+  - 114: {fileID: 11400006}
   m_Layer: 0
   m_Name: PlayerPrefab
   m_TagString: Untagged
@@ -230,6 +231,26 @@ MonoBehaviour:
   NextAnimationUpdate: 0
   lastDirection: 0
   Size: .00999999978
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5b673a034e67b64794c61f11709fdae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strengthIcon: {fileID: 0}
+  attackSpeedIcon: {fileID: 0}
+  walkingSpeedIcon: {fileID: 0}
+  skinThicknessIcon: {fileID: 0}
+  chainLightningIcon: {fileID: 0}
+  spikesIcon: {fileID: 0}
+  magnetIcon: {fileID: 0}
+  whirlwindIcon: {fileID: 0}
+  trapIcon: {fileID: 0}
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -278,25 +299,19 @@ MonoBehaviour:
   baseStrength: 5
   baseAttackSpeed: 6
   baseWalkSpeed: 100
-  baseDodgeChance: 0
   baseSkinThickness: 0
   strength: 0
   attackSpeed: 0
   walkSpeed: 0
-  dodgeChance: 0
   skinThickness: 0
   chainLightning: 0
-  flameThrower: 0
-  explosion: 0
-  spikes: 0
-  chainsaw: 0
+  trap: 0
   magnet: 0
   whirlwind: 0
-  bonusVsOrcs: 0
-  bonusVsGoblins: 0
   hitPoints: 100
   IsWhirlwindEnabled: 0
   WhirlWindEndTime: 0
+  minimumWalkSpeed: 20
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

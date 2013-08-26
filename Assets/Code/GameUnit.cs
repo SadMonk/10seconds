@@ -20,7 +20,7 @@ public class Buff
 }
 
 public class GameUnit : MonoBehaviour
-{
+{       
 	public int baseStrength = 0;
 	public int baseAttackSpeed = 0;
 	public int baseWalkSpeed = 0;
@@ -42,7 +42,7 @@ public class GameUnit : MonoBehaviour
 
     public int combinedStrength { get { return baseStrength + strength*5; } }
     public float combinedAttackSpeed { get { return (float)( baseAttackSpeed + attackSpeed ) * 0.25f; } }
-    public float combinedWalkSpeed { get { return (float)( baseWalkSpeed + walkSpeed*2 ); } }
+    public float combinedWalkSpeed { get { return (float)( Mathf.Max((float)(baseWalkSpeed + baseWalkSpeed * walkSpeed * 1.4f) , (float) minimumWalkSpeed) ); } }
     public float combinedSkinThickness {get {return (float)( baseSkinThickness + skinThickness*0.05f);}}
 
     Queue<Buff> buffs = new Queue<Buff>();
@@ -50,6 +50,8 @@ public class GameUnit : MonoBehaviour
     // active buff states
     public bool IsWhirlwindEnabled = false;
     public float WhirlWindEndTime = 0f;
+    
+    public int minimumWalkSpeed = 20;
 
 	// Update is called once per frame
 	void Update ()
