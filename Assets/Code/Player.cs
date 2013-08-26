@@ -131,7 +131,7 @@ public class Player : MonoBehaviour
     {
         if( !Game.isShuttingDown )
         {
-            Application.LoadLevel( "MainMenu" );
+            Application.LoadLevel( "GameOver" );
         }
     }
 }

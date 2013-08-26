@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
     {
         if( !Game.isShuttingDown )
         {
-            Game.Instance.KillCount++;
+            Game.KillCount++;
             dropStuff();
         }
     }
