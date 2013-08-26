@@ -17,7 +17,7 @@ public class GameHUD : MonoBehaviour {
     
 	void OnGUI() 
     {
-        int currentScore = Game.Instance.KillCount;
+        int currentScore = Game.KillCount;
         
         GUILayout.BeginHorizontal("box");
         
