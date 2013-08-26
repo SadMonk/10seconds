@@ -93,12 +93,12 @@ public class PlayerControl : MonoBehaviour
 
         if( Input.GetButtonDown( "Fire2" ) )
         {
-//             if( gameUnit.whirlwind > 0 )
-//             {
+            if( gameUnit.whirlwind > 0 )
+            {
                 gameUnit.IsWhirlwindEnabled = true;
                 gameUnit.WhirlWindEndTime = Time.time + 10f;
                 gameUnit.whirlwind--;
-            //}
+            }
         }
         
         if ( Input.GetButtonDown( "Jump" ) )
