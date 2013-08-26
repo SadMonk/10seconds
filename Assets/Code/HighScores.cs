@@ -25,6 +25,11 @@ public struct HighScore
         int score = br.ReadInt32();
         return new HighScore( name, score );
     }
+
+    public static int Compare( HighScore left, HighScore right )
+    {
+        return left.Score.CompareTo( right.Score );
+    }
 }
 
 public static class HighScoreManager
@@ -39,7 +44,7 @@ public static class HighScoreManager
     public static void Add( HighScore highScore )
     {
         Scores.Add( highScore );
-        Scores.Sort( ( scoreLeft, scoreRight ) => { return Convert.ToInt32( scoreLeft.Score >= scoreRight.Score ); } );
+        Scores.Sort( HighScore.Compare );
         while( Scores.Count > 10 )
             Scores.RemoveAt( Scores.Count - 1 );
 

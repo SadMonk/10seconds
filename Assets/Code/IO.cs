@@ -89,10 +89,13 @@ public static partial class IO
         }
         finally
         {
-            BinaryWriter bw = new BinaryWriter( fs );
-            action( bw );
-            bw.Close();
-            fs.Close();
+            if( fs != null )
+            {
+                BinaryWriter bw = new BinaryWriter( fs );
+                action( bw );
+                bw.Close();
+                fs.Close();
+            }
         }
     }
 
@@ -109,10 +112,13 @@ public static partial class IO
         }
         finally
         {
-            BinaryReader br = new BinaryReader( fs );
-            action( br );
-            br.Close();
-            fs.Close();
+            if( fs != null )
+            {
+                BinaryReader br = new BinaryReader( fs );
+                action( br );
+                br.Close();
+                fs.Close();
+            }
         }
     }
 }
