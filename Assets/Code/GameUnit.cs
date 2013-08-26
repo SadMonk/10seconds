@@ -11,10 +11,11 @@ public class Buff
     public int bonusSkinThickness = 0;
           
     public int chainLightning = 0;
-    public int trap = 0;
+    public int spikes = 0;
     
     public int magnet = 0;
     public int whirlwind = 0; 
+    public int trap = 0;
      
     public float EndTime;
 }
@@ -32,10 +33,11 @@ public class GameUnit : MonoBehaviour
     public int skinThickness = 0;    
       
     public int chainLightning = 0;
-    public int trap = 0;
+    public int spikes = 0;
     
     public int magnet = 0;
-    public int whirlwind = 0;  
+    public int whirlwind = 0; 
+    public int trap = 0; 
      
 
     public int hitPoints = 100;
@@ -75,10 +77,11 @@ public class GameUnit : MonoBehaviour
         skinThickness -= buff.bonusSkinThickness;
         
         chainLightning -= buff.chainLightning;
-        trap -= buff.trap;
+        spikes -= buff.spikes;
         
         magnet -= buff.magnet;
         whirlwind -= buff.whirlwind;
+        trap -= buff.trap;
         
         UpdateBuffs();
     }
@@ -91,10 +94,11 @@ public class GameUnit : MonoBehaviour
         skinThickness += buff.bonusSkinThickness;
   
         chainLightning += buff.chainLightning;
-        trap += buff.trap;
+        spikes += buff.spikes;
         
         magnet += buff.magnet;
         whirlwind += buff.whirlwind;
+        trap += buff.trap;
         
         buff.EndTime = Time.time + 10f;
         if( buff.whirlwind > 0 ) buff.EndTime += 10000000;
