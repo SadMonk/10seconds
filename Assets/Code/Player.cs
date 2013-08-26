@@ -27,6 +27,9 @@ public class Player : MonoBehaviour
     void Start()
     {
         gameUnit = GetComponent<GameUnit>();
+
+        gameUnit.baseStrength += Game.SkillDamage;
+        gameUnit.hitPoints += Game.SkillLife;
     }
 
     // Update is called once per frame
