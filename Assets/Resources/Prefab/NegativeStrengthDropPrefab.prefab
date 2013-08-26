@@ -55,7 +55,7 @@ Transform:
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.38, y: .800000012, z: 1}
+  m_LocalScale: {x: 1.30999994, y: 1.58000004, z: 1}
   m_Children:
   - {fileID: 400000}
   m_Father: {fileID: 0}
@@ -71,7 +71,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 9df7655d32ff0e44dba1e669e72b5f2c, type: 2}
+  - {fileID: 2100000, guid: e06c0bd304af53140b6c04ff5f719983, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -120,17 +120,11 @@ MonoBehaviour:
   bonusStrength: -1
   bonusAttackSpeed: 0
   bonusWalkSpeed: 0
-  bonusDodgeChance: 0
   bonusSkinThickness: 0
   chainLightning: 0
-  flameThrower: 0
-  explosion: 0
-  spikes: 0
-  chainsaw: 0
+  trap: 0
   magnet: 0
   whirlwind: 0
-  bonusVsOrcs: 0
-  bonusVsGoblins: 0
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

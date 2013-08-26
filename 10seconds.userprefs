@@ -1,16 +1,17 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\GameHUD.cs">
     <Files>
-      <File FileName="Assets\Code\Enemy.cs" Line="71" Column="23" />
-      <File FileName="Assets\Code\BuffTypes.cs" Line="3" Column="1" />
-      <File FileName="Assets\Code\GameUnit.cs" Line="49" Column="2" />
-      <File FileName="Assets\Code\Player.cs" Line="103" Column="67" />
-      <File FileName="Assets\Code\Game.cs" Line="1" Column="1" />
-      <File FileName="Assets\Code\Drop.cs" Line="8" Column="35" />
+      <File FileName="Assets\Code\Enemy.cs" Line="73" Column="84" />
+      <File FileName="Assets\Code\BuffTypes.cs" Line="1" Column="1" />
+      <File FileName="Assets\Code\GameUnit.cs" Line="1" Column="1" />
+      <File FileName="Assets\Code\Player.cs" Line="1" Column="1" />
+      <File FileName="Assets\Code\Drop.cs" Line="1" Column="1" />
       <File FileName="Assets\Code\PlayerCollider.cs" Line="1" Column="1" />
-      <File FileName="Assets\Code\EnemyAI.cs" Line="30" Column="3" />
-      <File FileName="Assets\Code\PlayerControl.cs" Line="23" Column="1" />
+      <File FileName="Assets\Code\EnemyAI.cs" Line="1" Column="1" />
+      <File FileName="Assets\Code\PlayerControl.cs" Line="1" Column="1" />
+      <File FileName="Assets\Code\Game.cs" Line="1" Column="1" />
+      <File FileName="Assets\Code\GameHUD.cs" Line="20" Column="56" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

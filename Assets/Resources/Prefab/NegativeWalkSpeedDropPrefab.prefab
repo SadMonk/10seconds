@@ -55,7 +55,7 @@ Transform:
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.38, y: .800000012, z: 1}
+  m_LocalScale: {x: 1.30999994, y: .699999988, z: 1}
   m_Children:
   - {fileID: 400000}
   m_Father: {fileID: 0}
@@ -120,17 +120,11 @@ MonoBehaviour:
   bonusStrength: 0
   bonusAttackSpeed: 0
   bonusWalkSpeed: -1
-  bonusDodgeChance: 0
   bonusSkinThickness: 0
   chainLightning: 0
-  flameThrower: 0
-  explosion: 0
-  spikes: 0
-  chainsaw: 0
+  trap: 0
   magnet: 0
   whirlwind: 0
-  bonusVsOrcs: 0
-  bonusVsGoblins: 0
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
