@@ -243,6 +243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5b673a034e67b64794c61f11709fdae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthIcon: {fileID: 2800000, guid: f53ecd81d60d02545b05cef356a359a2, type: 3}
   strengthIcon: {fileID: 2800000, guid: b3cc4821cfea3414ab57ceae8581d5d5, type: 3}
   attackSpeedIcon: {fileID: 2800000, guid: 96d0f232a6ecf6a4c9c649f0b66a6c7b, type: 3}
   walkingSpeedIcon: {fileID: 2800000, guid: c2f7928df487b2444b6c171bc3aed2ae, type: 3}
@@ -329,6 +330,7 @@ MonoBehaviour:
   hitPoints: 100
   IsWhirlwindEnabled: 0
   WhirlWindEndTime: 0
+  useMagnet: 0
   minimumWalkSpeed: 20
 --- !u!135 &13500000
 SphereCollider:

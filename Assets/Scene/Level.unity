@@ -125,7 +125,6 @@ MonoBehaviour:
   LastSpawnTime: 0
   SpawnRate: 4
   SpawnAmount: 2
-  KillCount: 0
 --- !u!114 &315971465
 MonoBehaviour:
   m_ObjectHideFlags: 0

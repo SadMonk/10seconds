@@ -3,6 +3,8 @@ using System.Collections;
 
 public class GameHUD : MonoBehaviour {
  
+    
+    public Texture2D healthIcon;
     public Texture2D strengthIcon;
     public Texture2D attackSpeedIcon;
     public Texture2D walkingSpeedIcon;
@@ -24,16 +26,16 @@ public class GameHUD : MonoBehaviour {
         
         GUILayout.Label("Banished:",GUILayout.Height(height));
         GUILayout.Label(currentScore.ToString(),GUILayout.Height(height));
-        
-        ShowBuff(strengthIcon,Game.Instance.player.gameUnit.strength);
-        ShowBuff(attackSpeedIcon,Game.Instance.player.gameUnit.attackSpeed);
-        ShowBuff(walkingSpeedIcon,Game.Instance.player.gameUnit.walkSpeed);
-        ShowBuff(skinThicknessIcon,Game.Instance.player.gameUnit.skinThickness);
-        ShowBuff(chainLightningIcon,Game.Instance.player.gameUnit.chainLightning);
-        ShowBuff(spikesIcon,Game.Instance.player.gameUnit.spikes);
-        ShowBuff(magnetIcon,Game.Instance.player.gameUnit.magnet);
-        ShowBuff(whirlwindIcon,Game.Instance.player.gameUnit.whirlwind);
-        ShowBuff(trapIcon,Game.Instance.player.gameUnit.trap);
+        ShowStat(healthIcon,Game.Instance.player.gameUnit.hitPoints);
+        ShowStat(strengthIcon,Game.Instance.player.gameUnit.strength);
+        ShowStat(attackSpeedIcon,Game.Instance.player.gameUnit.attackSpeed);
+        ShowStat(walkingSpeedIcon,Game.Instance.player.gameUnit.walkSpeed);
+        ShowStat(skinThicknessIcon,Game.Instance.player.gameUnit.skinThickness);
+        ShowStat(chainLightningIcon,Game.Instance.player.gameUnit.chainLightning);
+        ShowStat(spikesIcon,Game.Instance.player.gameUnit.spikes);
+        ShowStat(magnetIcon,Game.Instance.player.gameUnit.magnet);
+        ShowStat(whirlwindIcon,Game.Instance.player.gameUnit.whirlwind);
+        ShowStat(trapIcon,Game.Instance.player.gameUnit.trap);
         
         
         GUILayout.EndHorizontal();
@@ -48,7 +50,7 @@ public class GameHUD : MonoBehaviour {
     /// <param name='counter'>
     /// Counter.
     /// </param>
-    void ShowBuff(Texture2D icon, int counter)
+    void ShowStat(Texture2D icon, int counter)
     {
         if(counter != 0) 
         {            
