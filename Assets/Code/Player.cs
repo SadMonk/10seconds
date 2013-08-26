@@ -39,6 +39,11 @@ public class Player : MonoBehaviour
         CheckForBombHurt();
     }
 
+    public void Kill()
+    {
+        Destroy( this );
+    }
+
     public bool Attack( Direction direction )
     {
         if( lastAttackTime + ( 1f / gameUnit.combinedAttackSpeed ) < Time.time )

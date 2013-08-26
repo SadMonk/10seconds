@@ -21,13 +21,11 @@ public class Enemy : MonoBehaviour
 
     }
 
-    void OnDestroy()
+    public void Kill()
     {
-        if( !Game.isShuttingDown )
-        {
-            Game.KillCount++;
-            dropStuff();
-        }
+        Game.KillCount++;
+        dropStuff();
+        Destroy( gameObject );
     }
 
     void dropStuff()
