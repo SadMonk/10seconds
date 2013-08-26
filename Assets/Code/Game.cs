@@ -18,7 +18,7 @@ public class Game : MonoBehaviour
 	public GameObject StrengthDropPrefab;
     public GameObject DamageTextPrefab;
 
-    CameraComponent camera;
+    CameraComponent gameCamera;
 
     public float LastSpawnTime = 0f;
     public float SpawnRate = 10f;
@@ -47,7 +47,7 @@ public class Game : MonoBehaviour
     Player SpawnPlayer( Vector3 position )
     {
         GameObject player = GameObject.Instantiate( PlayerPrefab, position, Quaternion.identity ) as GameObject;
-        camera.FollowTarget = player;
+        gameCamera.FollowTarget = player;
         return player.GetComponent<Player>();
     }
 	
@@ -68,7 +68,7 @@ public class Game : MonoBehaviour
 	void Start () {
         Instance = this;
         LoadSpawners();
-        camera = (CameraComponent)FindObjectOfType( typeof( CameraComponent ) );
+        gameCamera = (CameraComponent)FindObjectOfType( typeof( CameraComponent ) );
         player = SpawnPlayer( Vector3.zero );
 		Drop testDrop = SpawnDrop( new Vector3( 5, 0, 0 ) , StrengthDropPrefab );				
 		drops.Add( testDrop );
