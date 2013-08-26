@@ -66,7 +66,7 @@ public class Player : MonoBehaviour
                         weHitSomething = true;
                         int dmg = Mathf.Max(1,gameUnit.combinedStrength);
                         Vector3 directionToEnemy = Vector3.Normalize( enemy.transform.GetChild( 0 ).position - transform.GetChild( 0 ).position );
-                        int damageDealt = enemy.GetComponent<GameUnit>().ReceiveDamage( dmg );
+                        enemy.GetComponent<GameUnit>().ReceiveDamage( dmg );
                         enemy.rigidbody.AddForce( directionToEnemy * 2500f );
                     }
                 }

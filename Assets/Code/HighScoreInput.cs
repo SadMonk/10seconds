@@ -8,6 +8,10 @@ public class HighScoreInput : MonoBehaviour
     {
         foreach( char c in Input.inputString )
         {
+            // Clear "Enter Name" on first key stroke
+            if( guiText.text == "Enter Name" )
+                guiText.text = "";
+
             if( c == "\b"[0] ) // backspace
             {
                 if( guiText.text.Length != 0 )
