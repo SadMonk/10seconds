@@ -3,6 +3,8 @@ using System.Collections;
 
 public class HighScoreInput : MonoBehaviour
 {
+    public int MaxCharacters;
+
     // Update is called once per frame
     void Update()
     {
@@ -27,7 +29,10 @@ public class HighScoreInput : MonoBehaviour
                     Application.LoadLevel( "HighScore" );
                 }
                 else
-                    guiText.text += c; // add text
+                {
+                    if( guiText.text.Length + 1 <= MaxCharacters )
+                        guiText.text += c; // add text
+                }
             }
         }
     }
