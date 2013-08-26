@@ -29,7 +29,7 @@ public class GameHUD : MonoBehaviour {
         
         GUILayout.BeginHorizontal("box");
             
-            GUILayout.Label("Banished:",style,GUILayout.Height(height));
+            GUILayout.Label("Killed:",style,GUILayout.Height(height));
             GUILayout.Label(currentScore.ToString(),style,GUILayout.Height(height));
             
             ShowStat(healthIcon,Game.Instance.player.gameUnit.hitPoints);
