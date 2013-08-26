@@ -13,3 +13,9 @@ EditorBuildSettings:
     path: Assets/Scene/Credits.unity
   - enabled: 1
     path: Assets/Scene/HighScore.unity
+  - enabled: 1
+    path: Assets/Scene/Almanac1.unity
+  - enabled: 1
+    path: Assets/Scene/Almanac2.unity
+  - enabled: 1
+    path: Assets/Scene/Almanac3.unity
