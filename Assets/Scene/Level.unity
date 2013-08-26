@@ -135,7 +135,7 @@ MonoBehaviour:
   LevelWidth: 107
   LevelHeight: 107
   WallDistanceHorizontal: 9.80000019
-  WallDistanceVertical: 6.5
+  WallDistanceVertical: 6.19999981
   SpawnSafetyRange: 5
   WallCount: 20
   StoneCount: 100
