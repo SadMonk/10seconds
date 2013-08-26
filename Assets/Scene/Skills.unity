@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6760a1b041d3a244fb42b1b4c5c2ed1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UnitSize: .0263999999
+  UnitSize: .0527999997
   ProgressType: 2
 --- !u!1001 &119997659
 Prefab:
@@ -276,7 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6760a1b041d3a244fb42b1b4c5c2ed1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UnitSize: .0263999999
+  UnitSize: .0527999997
   ProgressType: 3
 --- !u!23 &123189493
 Renderer:
@@ -1034,7 +1034,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6760a1b041d3a244fb42b1b4c5c2ed1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UnitSize: .0263999999
+  UnitSize: .0527999997
   ProgressType: 1
 --- !u!23 &1952913204
 Renderer:

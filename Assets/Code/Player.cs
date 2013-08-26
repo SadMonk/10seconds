@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
         gameUnit = GetComponent<GameUnit>();
 
         gameUnit.baseStrength += Game.SkillDamage;
-        gameUnit.hitPoints += Game.SkillLife;
+        gameUnit.hitPoints += Game.SkillLife * 10;
     }
 
     // Update is called once per frame

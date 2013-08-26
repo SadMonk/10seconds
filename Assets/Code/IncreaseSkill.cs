@@ -13,9 +13,9 @@ public class IncreaseSkill : MonoBehaviour {
             Game.KillCount -= KillCost;
             switch( skillType )
             {
-                case SkillType.Life: Game.SkillLife += 1; break;
-                case SkillType.Damage: Game.SkillDamage += 1; break;
-                case SkillType.Regen: Game.SkillRegen += 1; break;
+                case SkillType.Life: if( Game.SkillLife < 10 ) Game.SkillLife += 1; break;
+                case SkillType.Damage: if( Game.SkillDamage < 10 ) Game.SkillDamage += 1; break;
+                case SkillType.Regen: if( Game.SkillRegen < 10 ) Game.SkillRegen += 1; break;
             }
             Game.SaveSkills();
         }

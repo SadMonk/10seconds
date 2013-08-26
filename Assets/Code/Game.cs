@@ -132,6 +132,8 @@ public class Game : MonoBehaviour
             SkillLife = br.ReadInt32();
             SkillRegen = br.ReadInt32();
         } );
+
+        Debug.Log( SkillRegen );
     }
 
     public static void SaveSkills()

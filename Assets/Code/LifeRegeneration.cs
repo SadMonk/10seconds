@@ -4,7 +4,7 @@ using System.Collections;
 public class LifeRegeneration : MonoBehaviour
 {
     public int RegenRate;
-    public float LastRegenTime;
+    public float NextRegenTime;
 
     GameUnit gameUnit;
 
@@ -21,10 +21,10 @@ public class LifeRegeneration : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if( LastRegenTime + 1f < Time.time )
+        if( NextRegenTime < Time.time )
         {
             gameUnit.hitPoints += RegenRate;
-            LastRegenTime = Time.time;
+            NextRegenTime = Time.time + 1f;
         }
     }
 }
