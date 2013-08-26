@@ -14,5 +14,7 @@ public class Drop : MonoBehaviour {
     public int magnet = 0;
     public int whirlwind = 0;
     public int trap = 0;
+    
+    public int bomb = 0;
 		
 }

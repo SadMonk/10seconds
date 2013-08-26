@@ -120,7 +120,7 @@ MonoBehaviour:
   PlayerPrefab: {fileID: 100000, guid: ad142a7bd1b2eb149988b3fcafc188ff, type: 2}
   EnemyPrefab1: {fileID: 100002, guid: c4686484025d1634080abf9f8cc56dc8, type: 2}
   EnemyPrefab2: {fileID: 100002, guid: b2ac70de80fd3fd4682f883f1a1a383b, type: 2}
-  StrengthDropPrefab: {fileID: 100002, guid: 48a4531d43549204ebd9ec6fcb2cb525, type: 2}
+  spawnDropPrefab: {fileID: 100002, guid: 7da25246011f6af409ebfd74eb285cc8, type: 2}
   DamageTextPrefab: {fileID: 100000, guid: e330322c7d9d8bd439bfad8bb9a28d65, type: 2}
   LastSpawnTime: 0
   SpawnRate: 4
