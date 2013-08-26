@@ -17,6 +17,7 @@ public class IncreaseSkill : MonoBehaviour {
                 case SkillType.Damage: Game.SkillDamage += 1; break;
                 case SkillType.Regen: Game.SkillRegen += 1; break;
             }
+            Game.SaveSkills();
         }
     }
 }

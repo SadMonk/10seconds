@@ -70,6 +70,7 @@ public class Game : MonoBehaviour
 	// Use this for initialization
 	void Start () {
         Instance = this;
+        LoadSkills();
         Game.KillCount = 0;
         LoadSpawners();
         gameCamera = (CameraComponent)FindObjectOfType( typeof( CameraComponent ) );
@@ -122,4 +123,24 @@ public class Game : MonoBehaviour
     {
         TriggerSpawners();
 	}
+
+    void LoadSkills()
+    {
+        IO.ReadFromFile( "Skills.bin", ( br ) =>
+        {
+            SkillDamage = br.ReadInt32();
+            SkillLife = br.ReadInt32();
+            SkillRegen = br.ReadInt32();
+        } );
+    }
+
+    public static void SaveSkills()
+    {
+        IO.WriteToFile( "Skills.bin", ( bw ) =>
+        {
+            bw.Write( SkillDamage );
+            bw.Write( SkillLife );
+            bw.Write( SkillRegen );
+        } );
+    }
 }
