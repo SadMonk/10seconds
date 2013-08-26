@@ -23,3 +23,9 @@ EditorBuildSettings:
     path: Assets/Scene/GameOver.unity
   - enabled: 1
     path: Assets/Scene/Skills.unity
+  - enabled: 1
+    path: Assets/Scene/Almanac4.unity
+  - enabled: 1
+    path: Assets/Scene/Almanac5.unity
+  - enabled: 1
+    path: Assets/Scene/Almanac6.unity

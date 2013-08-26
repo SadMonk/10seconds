@@ -74,60 +74,6 @@ NavMeshSettings:
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
   m_NavMesh: {fileID: 0}
---- !u!1 &295783787
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100000, guid: 418f4d9b7ee0f124d90512f7c83f6550, type: 2}
-  m_PrefabInternal: {fileID: 725122480}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 295783790}
-  - 65: {fileID: 295783789}
-  - 114: {fileID: 295783788}
-  m_Layer: 0
-  m_Name: MenuButtonR
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &295783788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400000, guid: 418f4d9b7ee0f124d90512f7c83f6550,
-    type: 2}
-  m_PrefabInternal: {fileID: 725122480}
-  m_GameObject: {fileID: 295783787}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b806500220200049a00f0dc539624e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SceneName: Almanac4
---- !u!65 &295783789
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6500000, guid: 418f4d9b7ee0f124d90512f7c83f6550,
-    type: 2}
-  m_PrefabInternal: {fileID: 725122480}
-  m_GameObject: {fileID: 295783787}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!4 &295783790
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400000, guid: 418f4d9b7ee0f124d90512f7c83f6550, type: 2}
-  m_PrefabInternal: {fileID: 725122480}
-  m_GameObject: {fileID: 295783787}
-  m_LocalRotation: {x: 0, y: 0, z: .22295779, w: .974828124}
-  m_LocalPosition: {x: 1.11245966, y: .153279245, z: -4.12109375}
-  m_LocalScale: {x: .439999998, y: .330000013, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
 --- !u!1001 &441930955
 Prefab:
   m_ObjectHideFlags: 0
@@ -168,50 +114,6 @@ Prefab:
   m_RootGameObject: {fileID: 2040297234}
   m_IsPrefabParent: 0
   m_IsExploded: 1
---- !u!1001 &725122480
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 400000, guid: 418f4d9b7ee0f124d90512f7c83f6550, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 1.11245966
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 418f4d9b7ee0f124d90512f7c83f6550, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: .153279245
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 418f4d9b7ee0f124d90512f7c83f6550, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -4.12109375
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 418f4d9b7ee0f124d90512f7c83f6550, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 418f4d9b7ee0f124d90512f7c83f6550, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 418f4d9b7ee0f124d90512f7c83f6550, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: .22295779
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 418f4d9b7ee0f124d90512f7c83f6550, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: .974828124
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 418f4d9b7ee0f124d90512f7c83f6550, type: 2}
-      propertyPath: SceneName
-      value: Almanac4
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 418f4d9b7ee0f124d90512f7c83f6550, type: 2}
-  m_RootGameObject: {fileID: 295783787}
-  m_IsPrefabParent: 0
-  m_IsExploded: 1
 --- !u!1001 &739118127
 Prefab:
   m_ObjectHideFlags: 0
@@ -250,7 +152,7 @@ Prefab:
     - target: {fileID: 2300000, guid: 667ab879203e96a4788116071bfb2045, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 1953777593d963749b62adf03205bd8a, type: 2}
+      objectReference: {fileID: 2100000, guid: 4eb0df4c91560834388c6f1a07daa92b, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 667ab879203e96a4788116071bfb2045, type: 2}
   m_RootGameObject: {fileID: 1886503928}
@@ -293,7 +195,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 418f4d9b7ee0f124d90512f7c83f6550, type: 2}
       propertyPath: SceneName
-      value: Almanac2
+      value: Almanac5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 418f4d9b7ee0f124d90512f7c83f6550, type: 2}
@@ -329,7 +231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b806500220200049a00f0dc539624e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: Almanac2
+  SceneName: Almanac5
 --- !u!65 &1498252776
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -484,7 +386,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 1953777593d963749b62adf03205bd8a, type: 2}
+  - {fileID: 2100000, guid: 4eb0df4c91560834388c6f1a07daa92b, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
