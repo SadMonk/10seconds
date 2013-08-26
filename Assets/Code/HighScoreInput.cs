@@ -26,7 +26,7 @@ public class HighScoreInput : MonoBehaviour
                 {
                     print( "User entered his name: " + guiText.text );
                     HighScoreManager.Add( new HighScore( guiText.text, Game.KillCount ) );
-                    Application.LoadLevel( "HighScore" );
+                    Application.LoadLevel( "Skills" );
                 }
                 else
                 {
